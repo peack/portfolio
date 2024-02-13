@@ -24,7 +24,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/components",
+  "include": [
+    "src/components",
     "src/custom.d.ts"
   ]
 }
