@@ -1,14 +1,20 @@
 import "./App.css";
-import Navbar from "./components/Sidebar";
+import Home from "./components/Home";
+import { experienceData } from "./data/ExperienceData";
+import ExperienceContainer from "./components/ExperienceContainer";
+import Timeline from "./components/Timeline";
+import Sidebar from "./components/Sidebar";
 import { navItems } from "./data/NavItemsData";
 
 function App() {
   return (
-    <>
-      {/*<Home />*/}
-      <Navbar navItems={navItems} />
-      {/*<Timeline />*/}
-    </>
+    <div className="flex App ">
+      <Sidebar navItems={navItems} />
+      <Home>
+        <ExperienceContainer experiences={experienceData} />
+        <Timeline />
+      </Home>
+    </div>
   );
 }
 

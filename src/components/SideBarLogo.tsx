@@ -4,7 +4,7 @@ import portrait from "../assets/portrait.jpg";
 const SideBarLogo: React.FC = () => {
   return (
     <img
-      className="my-8 mx-4 h-40 w-40 rounded-full object-cover"
+      className="my-8 mx-4 h-40 w-40 rounded-full object-cover flex-1"
       src={portrait}
       alt="protrait"
     />
