@@ -6,14 +6,8 @@ interface HomeProps {
 
 const Home: FC<HomeProps> = ({ children }) => {
   return (
-    <main className="p-4 justify-center items-start bg-almost-white shadow-md">
+    <main className="p-4 flex-1 overflow-auto justify-center items-start bg-almost-white shadow-md">
       {children}
-      <p className="text-black">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet
-        asperiores dicta dolores illo iste, magni numquam officiis quaerat
-        suscipit! Doloremque eaque expedita hic, incidunt itaque magni nemo
-        reiciendis rerum.
-      </p>
     </main>
   );
 };

@@ -8,7 +8,7 @@ import { navItems } from "./data/NavItemsData";
 
 function App() {
   return (
-    <div className="flex App ">
+    <div className="flex">
       <Sidebar navItems={navItems} />
       <Home>
         <ExperienceContainer experiences={experienceData} />

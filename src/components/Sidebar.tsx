@@ -8,8 +8,8 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ navItems }) => (
-  <nav>
-    <div className="flex-none h-screen bg-gray-800 w-48">
+  <nav className="bg-almost-white ">
+    <div className=" bg-gray-800 w-52 sidebar">
       <div className="flex justify-center items-center ">
         <SideBarLogo />
       </div>
