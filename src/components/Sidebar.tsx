@@ -8,23 +8,25 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ navItems }) => (
-  <nav className="bg-almost-white ">
-    <div className=" bg-gray-800 w-52 sidebar">
-      <div className="flex justify-center items-center ">
-        <SideBarLogo />
+  <aside className="bg-almost-white ">
+    <nav>
+      <div className=" bg-gray-800 w-52 sidebar">
+        <div className="flex justify-center items-center ">
+          <SideBarLogo />
+        </div>
+        <SidebarHeader title={"Mikael Galliot"} />
+        {navItems.map((item: NavItem, index: React.Key | null | undefined) => (
+          <a
+            key={index}
+            href={item.href}
+            className="m-2 text-white hover:bg-gray-700 p-2 rounded block"
+          >
+            {item.name}
+          </a>
+        ))}
       </div>
-      <SidebarHeader title={"Mikael Galliot"} />
-      {navItems.map((item: NavItem, index: React.Key | null | undefined) => (
-        <a
-          key={index}
-          href={item.href}
-          className="m-2 text-white hover:bg-gray-700 p-2 rounded block"
-        >
-          {item.name}
-        </a>
-      ))}
-    </div>
-  </nav>
+    </nav>
+  </aside>
 );
 
 export default Sidebar;
