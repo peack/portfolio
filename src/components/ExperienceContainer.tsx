@@ -10,7 +10,7 @@ const ExperienceContainer: React.FC<ExperienceContainerProps> = ({
   experiences,
 }) => {
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap m-10">
       {experiences.map((experience, index) => (
         <ExperienceCard experience={experience} key={index} />
       ))}
