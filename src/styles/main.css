@@ -47,8 +47,35 @@ p, h1, h2, h3, h4, h5, h6 {
 .sidebar {
     position: absolute;
     top: 0;
+    color: white;
 }
 
 .main-content {
     transition: margin-left 0.3s ease;
+}
+
+.sidebar a {
+    position: relative;
+    text-decoration: none;
+    color: #fff; /* Set your desired text color */
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.sidebar a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Adjust the thickness of the underline as needed */
+    bottom: 0;
+    left: 0;
+    background-color: #fff; /* Set your desired underline color */
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+}
+
+.sidebar a:hover::after {
+    transform-origin: center;
+    transform: scaleX(1);
 }
