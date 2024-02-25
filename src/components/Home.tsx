@@ -2,13 +2,16 @@ import React, { FC } from "react";
 
 interface HomeProps {
   children?: React.ReactNode;
+  isSidebarOpen: boolean;
 }
 
-const Home: FC<HomeProps> = ({ children }) => {
+const Home: FC<HomeProps> = ({ children, isSidebarOpen }) => {
   return (
-    <main className="p-4 flex-1 overflow-auto justify-center items-start bg-almost-white shadow-md">
+    <div
+      className={`main-content  max-h-screen overflow-auto p-6 ${isSidebarOpen ? "ml-48 w-full-m-192" : ""}`}
+    >
       {children}
-    </main>
+    </div>
   );
 };
 

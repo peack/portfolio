@@ -5,28 +5,38 @@ import SidebarHeader from "./SidebarHeader.tsx";
 
 interface SidebarProps {
   navItems: NavItem[];
+  isSidebarOpen: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ navItems }) => (
-  <aside className="bg-almost-white ">
-    <nav>
-      <div className=" bg-gray-800 w-52 sidebar">
-        <div className="flex justify-center items-center ">
+const Sidebar: React.FC<SidebarProps> = ({
+  navItems,
+  isSidebarOpen: isSidebarOpen,
+}) => {
+  return (
+    <div
+      className={`sidebar overflow-auto bg-gray-800 h-screen w-48 transition-transform transform ${isSidebarOpen ? "" : "-translate-x-full"}`}
+    >
+      <div className="container  justify-center items-center text-center">
+        <div className="flex">
           <SideBarLogo />
         </div>
-        <SidebarHeader title={"Mikael Galliot"} />
-        {navItems.map((item: NavItem, index: React.Key | null | undefined) => (
-          <a
-            key={index}
-            href={item.href}
-            className="m-2 text-white hover:bg-gray-700 p-2 rounded block"
-          >
-            {item.name}
-          </a>
-        ))}
+        <div className="flex-col content-center">
+          <SidebarHeader title={"Mikael Galliot"} />
+          {navItems.map(
+            (item: NavItem, index: React.Key | null | undefined) => (
+              <a
+                key={index}
+                href={item.href}
+                className="m-2 text-white hover:bg-gray-700 p-2 rounded block"
+              >
+                {item.name}
+              </a>
+            ),
+          )}
+        </div>
       </div>
-    </nav>
-  </aside>
-);
+    </div>
+  );
+};
 
 export default Sidebar;
