@@ -4,8 +4,9 @@ import { experienceData } from "./data/ExperienceData";
 import ExperienceContainer from "./components/ExperienceContainer";
 import Sidebar from "./components/Sidebar";
 import { navItems } from "./data/NavItemsData";
-import { TimelineContainer } from "./components/TimelineContainer";
 import { useEffect, useState } from "react";
+import HomePage from "./components/HomePage";
+import ContactContainer from "./components/ContactContainer";
 
 function App() {
   const [sideBarToggle, setSideBarToggle]: [
@@ -31,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="container flex">
+    <div className="flex">
       {!sideBarToggle && (
         <div className="absolute left-0 top-0 z-10 " onClick={handleSidebar}>
           X
@@ -41,8 +42,9 @@ function App() {
         <Sidebar navItems={navItems} isSidebarOpen={sideBarToggle} />
       )}
       <Home isSidebarOpen={sideBarToggle}>
-        <ExperienceContainer experiences={experienceData} />
-        <TimelineContainer />
+        <HomePage id="home" />
+        <ExperienceContainer experiences={experienceData} id="experience" />
+        <ContactContainer id="contact" />
       </Home>
     </div>
   );

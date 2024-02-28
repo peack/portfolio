@@ -27,7 +27,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               <a
                 key={index}
                 href={item.href}
-                className="m-2 text-white hover:bg-gray-700 p-2 rounded block"
+                className="m-2 text-white p-2 rounded block"
               >
                 {item.name}
               </a>

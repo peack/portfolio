@@ -8,7 +8,7 @@ interface HomeProps {
 const Home: FC<HomeProps> = ({ children, isSidebarOpen }) => {
   return (
     <div
-      className={`main-content max-h-screen overflow-auto ${isSidebarOpen ? "ml-48 w-full-m-192" : ""}`}
+      className={`main-content max-h-screen overflow-auto ${isSidebarOpen ? "ml-52 w-full-m-208" : ""}`}
     >
       {children}
     </div>
