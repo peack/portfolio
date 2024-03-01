@@ -1,4 +1,4 @@
-import { TExperience } from "../types/TExperience";
+import { TExperience } from "../../types/TExperience";
 import ExperienceCard from "./ExperienceCard.tsx";
 import React from "react";
 

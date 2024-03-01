@@ -1,5 +1,5 @@
 import React from "react";
-import { TExperience } from "../types/TExperience";
+import { TExperience } from "../../types/TExperience";
 
 interface ExperienceProps {
   experience: TExperience;

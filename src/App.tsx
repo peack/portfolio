@@ -1,12 +1,13 @@
 // import "./,.css";
 import Home from "./components/Home";
 import { experienceData } from "./data/ExperienceData";
-import ExperienceContainer from "./components/ExperienceContainer";
+import ExperienceContainer from "./components/Experience/ExperienceContainer";
 import Sidebar from "./components/Sidebar";
 import { navItems } from "./data/NavItemsData";
 import { useEffect, useState } from "react";
 import HomePage from "./components/HomePage";
 import ContactContainer from "./components/ContactContainer";
+import SkillContainer from "./components/Skills/SkillContainer";
 
 function App() {
   const [sideBarToggle, setSideBarToggle]: [
@@ -43,6 +44,7 @@ function App() {
       )}
       <Home isSidebarOpen={sideBarToggle}>
         <HomePage id="home" />
+        <SkillContainer />
         <ExperienceContainer experiences={experienceData} id="experience" />
         <ContactContainer id="contact" />
       </Home>

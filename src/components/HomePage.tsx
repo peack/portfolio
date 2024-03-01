@@ -1,6 +1,7 @@
-import meTall from "../assets/me_wizard.jpeg";
+import meTall from "../assets/me_wizard_2.jpg";
 import introData from "../data/Intro.json";
 import React from "react";
+import ContentBox from "./ContentBox.tsx";
 
 interface HomePageProps {
   id: string;
@@ -8,10 +9,7 @@ interface HomePageProps {
 
 const HomePage: React.FC<HomePageProps> = ({ id }) => {
   return (
-    <div
-      id={id}
-      className="lg:grid lg:grid-cols-3 lg:grid-rows-3 gap-2 min-h-full bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-md p-10 m-4 overflow-auto"
-    >
+    <ContentBox id={id}>
       <div className={`col-span-1 row-span-2 flex items-center`}>
         <h1>MIKAEL GALLIOT</h1>
       </div>
@@ -25,7 +23,7 @@ const HomePage: React.FC<HomePageProps> = ({ id }) => {
       <div className="col-span-3">
         <p>{introData.introduction}</p>
       </div>
-    </div>
+    </ContentBox>
   );
 };
 

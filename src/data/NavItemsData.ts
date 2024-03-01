@@ -1,6 +1,6 @@
-import { NavItem } from "../types/NavItem";
+import { TNavItem } from "../types/TNavItem";
 
-const navItems: NavItem[] = [
+const navItems: TNavItem[] = [
   { name: "Home", href: "/#home" },
   { name: "About", href: "/#about" },
   { name: "Portfolio", href: "/#portfolio" },

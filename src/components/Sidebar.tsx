@@ -1,10 +1,10 @@
 import React from "react";
-import { NavItem } from "../types/NavItem";
+import { TNavItem } from "../types/TNavItem";
 import SideBarLogo from "./SideBarLogo";
 import SidebarHeader from "./SidebarHeader.tsx";
 
 interface SidebarProps {
-  navItems: NavItem[];
+  navItems: TNavItem[];
   isSidebarOpen: boolean;
 }
 
@@ -23,7 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         <div className="flex-col content-center">
           <SidebarHeader title={"Mikael Galliot"} />
           {navItems.map(
-            (item: NavItem, index: React.Key | null | undefined) => (
+            (item: TNavItem, index: React.Key | null | undefined) => (
               <a
                 key={index}
                 href={item.href}
