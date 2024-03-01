@@ -8,12 +8,12 @@
     margin: 0;
 }
 
-.sidebar::-webkit-scrollbar, .main-content::-webkit-scrollbar {
+.content-box::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .main-content::-webkit-scrollbar {
     display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.sidebar, .main-content {
+.sidebar, .main-content .content-box {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }

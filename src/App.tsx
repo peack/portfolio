@@ -44,7 +44,7 @@ function App() {
       )}
       <Home isSidebarOpen={sideBarToggle}>
         <HomePage id="home" />
-        <SkillContainer />
+        <SkillContainer id="skills" />
         <ExperienceContainer experiences={experienceData} id="experience" />
         <ContactContainer id="contact" />
       </Home>
