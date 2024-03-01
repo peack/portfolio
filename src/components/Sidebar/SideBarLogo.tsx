@@ -1,5 +1,5 @@
 import React from "react";
-import portrait from "../assets/portrait noBG.png";
+import portrait from "../../assets/portrait noBG.png";
 
 const SideBarLogo: React.FC = () => {
   return (

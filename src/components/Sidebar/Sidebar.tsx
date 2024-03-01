@@ -1,6 +1,6 @@
 import React from "react";
-import { TNavItem } from "../types/TNavItem";
-import SideBarLogo from "./SideBarLogo";
+import { TNavItem } from "../../types/TNavItem";
+import SideBarLogo from "./SideBarLogo.tsx";
 import SidebarHeader from "./SidebarHeader.tsx";
 
 interface SidebarProps {

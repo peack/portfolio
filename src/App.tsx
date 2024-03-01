@@ -2,7 +2,7 @@
 import Home from "./components/Home";
 import { experienceData } from "./data/ExperienceData";
 import ExperienceContainer from "./components/Experience/ExperienceContainer";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar/Sidebar";
 import { navItems } from "./data/NavItemsData";
 import { useEffect, useState } from "react";
 import HomePage from "./components/HomePage";
