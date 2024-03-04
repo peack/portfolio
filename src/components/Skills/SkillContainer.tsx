@@ -10,8 +10,8 @@ interface SkillContainerProps {
 const SkillContainer: React.FC<SkillContainerProps> = ({ id }) => {
   return (
     <ContentBox id={id} gridCol={2} gridRow={1}>
-      <SkillPillContainer />
       <SkillChart />
+      <SkillPillContainer />
     </ContentBox>
   );
 };
