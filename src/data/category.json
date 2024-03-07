@@ -1,0 +1,52 @@
+{
+  "Web Development": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "jQuery",
+    "HTML",
+    "CSS",
+    "Responsive design"
+  ],
+  "Mobile Development": [
+    "Swift",
+    "Objective-C",
+    "React Native",
+    "SwiftUI",
+    "UIKit"
+  ],
+  "Database and APIs": [
+    "Core Data",
+    "RESTful API",
+    "MongoDB",
+    "SQL"
+  ],
+  "Testing and Version Control": [
+    "TDD",
+    "Git",
+    "GitHub",
+    "npm"
+  ],
+  "Design and Styling": [
+    "Tailwind",
+    "UI/UX Design",
+    "Responsive design",
+    "HTML",
+    "CSS"
+  ],
+  "Soft Skills": [
+    "Teamwork",
+    "Empathy",
+    "Collaboration",
+    "Patience",
+    "Critical thinking",
+    "Organization",
+    "Attention to detail",
+    "Problem-solving"
+  ],
+  "Project Management": [
+    "Time management",
+    "Adaptability"
+  ]
+}

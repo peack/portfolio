@@ -5,6 +5,7 @@ export default {
     extend: {
       maxWidth: {
         "80p": "80%",
+        "50vh": "50vh",
       },
       width: {
         "full-m-208": "calc(100vw - 208px)",
