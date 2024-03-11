@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+}
+
+.content-box::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .main-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sidebar, .main-content .content-box {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+body {
+    line-height: 1.5;
+    background-color: #C9C7C0FF;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+.card {
+    padding: 2em;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    color: white;
+}
+
+.main-content {
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar a {
+    position: relative;
+    text-decoration: none;
+    color: #fff; /* Set your desired text color */
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.sidebar a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Adjust the thickness of the underline as needed */
+    bottom: 0;
+    left: 0;
+    background-color: #fff; /* Set your desired underline color */
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+}
+
+.sidebar a:hover::after {
+    transform-origin: center;
+    transform: scaleX(1);
+}

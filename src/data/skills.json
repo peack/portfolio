@@ -1,0 +1,330 @@
+{
+  "skills": [
+    {
+      "name": "Debugging issues",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "Swift",
+        "Objective-C",
+        "React",
+        "SwiftUI",
+        "UIKit",
+        "Node.js",
+        "jQuery",
+        "Core Data",
+        "TDD",
+        "Git",
+        "GitHub",
+        "Python"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "tags": [
+        "Identifying and debugging issues",
+        "React",
+        "Node.js",
+        "jQuery",
+        "npm",
+        "TDD",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "tags": [
+        "Identifying and debugging issues",
+        "React",
+        "Node.js",
+        "TDD",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Swift",
+      "tags": [
+        "Identifying and debugging issues",
+        "SwiftUI",
+        "Objective-C",
+        "UIKit",
+        "Core Data",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Objective-C",
+      "tags": [
+        "Identifying and debugging issues",
+        "Swift",
+        "UIKit",
+        "Core Data",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "React",
+      "tags": [
+        "Identifying and debugging issues",
+        "JavaScript",
+        "TypeScript",
+        "Tailwind",
+        "HTML",
+        "CSS",
+        "Responsive design",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Tailwind",
+      "tags": [
+        "React",
+        "HTML",
+        "CSS",
+        "Responsive design"
+      ]
+    },
+    {
+      "name": "HTML",
+      "tags": [
+        "React",
+        "Tailwind",
+        "CSS",
+        "Responsive design"
+      ]
+    },
+    {
+      "name": "CSS",
+      "tags": [
+        "React",
+        "Tailwind",
+        "HTML",
+        "Responsive design"
+      ]
+    },
+    {
+      "name": "SwiftUI",
+      "tags": [
+        "Swift",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "MongoDB",
+      "tags": [
+        "RESTful API"
+      ]
+    },
+    {
+      "name": "SQL",
+      "tags": [
+        "RESTful API"
+      ]
+    },
+    {
+      "name": "RESTful API",
+      "tags": [
+        "JavaScript",
+        "MongoDB",
+        "SQL"
+      ]
+    },
+    {
+      "name": "KMM",
+      "tags": []
+    },
+    {
+      "name": "UIKit",
+      "tags": [
+        "Swift",
+        "Objective-C",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Node.js",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "jQuery",
+      "tags": [
+        "JavaScript",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "npm",
+      "tags": [
+        "JavaScript",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Core Data",
+      "tags": [
+        "Swift",
+        "Objective-C",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "TDD",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Responsive design",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Tailwind",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "name": "Git",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "Swift",
+        "Objective-C",
+        "React",
+        "SwiftUI",
+        "UIKit",
+        "Node.js",
+        "jQuery",
+        "npm",
+        "Core Data",
+        "TDD",
+        "Responsive design"
+      ]
+    },
+    {
+      "name": "GitHub",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "Swift",
+        "Objective-C",
+        "React",
+        "SwiftUI",
+        "UIKit",
+        "Node.js",
+        "jQuery",
+        "npm",
+        "Core Data",
+        "TDD",
+        "Responsive design"
+      ]
+    },
+    {
+      "name": "Python",
+      "tags": [
+        "Identifying and debugging issues",
+        "Git",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Adaptability",
+      "tags": [
+        "Teamwork",
+        "Empathy",
+        "Collaboration",
+        "Patience",
+        "Critical thinking"
+      ]
+    },
+    {
+      "name": "Time management",
+      "tags": [
+        "Organisation"
+      ]
+    },
+    {
+      "name": "Problem-solving",
+      "tags": [
+        "Attention to detail",
+        "Critical thinking"
+      ]
+    },
+    {
+      "name": "Attention to detail",
+      "tags": [
+        "Problem-solving",
+        "Critical thinking"
+      ]
+    },
+    {
+      "name": "Organisation",
+      "tags": [
+        "Time management"
+      ]
+    },
+    {
+      "name": "Teamwork",
+      "tags": [
+        "Empathy",
+        "Collaboration",
+        "Patience",
+        "Adaptability"
+      ]
+    },
+    {
+      "name": "Empathy",
+      "tags": [
+        "Teamwork",
+        "Collaboration",
+        "Patience",
+        "Adaptability"
+      ]
+    },
+    {
+      "name": "Collaboration",
+      "tags": [
+        "Teamwork",
+        "Empathy",
+        "Patience",
+        "Adaptability"
+      ]
+    },
+    {
+      "name": "Patience",
+      "tags": [
+        "Teamwork",
+        "Empathy",
+        "Collaboration",
+        "Adaptability"
+      ]
+    },
+    {
+      "name": "Critical thinking",
+      "tags": [
+        "Adaptability",
+        "Problem-solving",
+        "Attention to detail"
+      ]
+    }
+  ]
+}
