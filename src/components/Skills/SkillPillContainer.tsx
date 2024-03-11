@@ -93,20 +93,20 @@ const SkillPillContainer: React.FC = () => {
   );
 
   return (
-    <div className="col-span-1 ">
+    <div className="col-span-1 lg:col-span-2 ">
       <div className="border rounded shadow-md ">
         <div className="flex  bg-gray-200 p-3 rounded-t justify-between">
-          <h2 className="title start-0 text-lg font-semibold">Header</h2>
+          <h2 className="title start-0 text-lg font-semibold">Skills</h2>
           <div className="en">
             <Dropdown tagArr={skillsTag} />
           </div>
         </div>
         <div className="">
-          <p>{skillsTag.map((item) => `| ${item}|`)} </p>
+          {/* <p>{skillsTag.map((item) => `| ${item}|`)} </p> */}
           {/*items*/}
         </div>
         <div className="">
-          <div className="p-4 flex flex-wrap overflow-auto">
+          <div className="p-4 flex flex-wrap ">
             {skills.map((skill) => (
               <SkillPill key={skill.name} skill={skill} active={false} />
             ))}

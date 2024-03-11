@@ -7,7 +7,7 @@ import { navItems } from "./data/NavItemsData";
 import { useEffect, useState } from "react";
 import HomePage from "./components/HomePage";
 import ContactContainer from "./components/ContactContainer";
-import SkillContainer from "./components/Skills/SkillContainer";
+import SkillContainerGrid from "./components/Skills/SkillContainerGrid";
 
 function App() {
   const [sideBarToggle, setSideBarToggle]: [
@@ -44,7 +44,7 @@ function App() {
       )}
       <Home isSidebarOpen={sideBarToggle}>
         <HomePage id="home" />
-        <SkillContainer id="skills" />
+        <SkillContainerGrid id="skills" />
         <ExperienceContainer experiences={experienceData} id="experience" />
         <ContactContainer id="contact" />
       </Home>

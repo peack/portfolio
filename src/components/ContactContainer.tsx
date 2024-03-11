@@ -11,7 +11,7 @@ const ContactForm: React.FC<ContactContainerProps> = ({ id }) => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
@@ -19,7 +19,7 @@ const ContactForm: React.FC<ContactContainerProps> = ({ id }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // Here you can handle form submission, such as sending data to a server
     console.log(formData);
