@@ -1,7 +1,8 @@
 import React from "react";
 import SkillPillContainer from "./SkillPillContainer.tsx";
 import SkillChart from "./SkillChart.tsx";
-import ContentBox from "../ContentBox.tsx";
+import ContentBoxGrid from "../Layout/ContentBoxGrid.tsx";
+import ContentBoxFlex from "../Layout/ContentBoxFlex.tsx";
 
 interface SkillContainerProps {
   id: string;
@@ -9,10 +10,14 @@ interface SkillContainerProps {
 
 const SkillContainer: React.FC<SkillContainerProps> = ({ id }) => {
   return (
-    <ContentBox id={id} gridCol={2} gridRow={1}>
+    // <ContentBoxGrid id={id} gridCol={3} gridRow={1}>
+    <ContentBoxFlex>
       <SkillChart />
       <SkillPillContainer />
-    </ContentBox>
+    </ContentBoxFlex>
+    //   {/* <div className="flex-nowrap"> */}
+    //   {/* </div> */}
+    // {/* </ContentBoxGrid> */}
   );
 };
 

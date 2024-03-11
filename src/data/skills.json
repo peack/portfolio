@@ -17,6 +17,12 @@
         "Git",
         "GitHub",
         "Python"
+      ],
+      "category": [
+        "Web Development",
+        "Mobile Development",
+        "Database and APIs",
+        "Testing and Version Control"
       ]
     },
     {
@@ -30,6 +36,9 @@
         "TDD",
         "Git",
         "GitHub"
+      ],
+      "category": [
+        "Web Development"
       ]
     },
     {
@@ -41,6 +50,9 @@
         "TDD",
         "Git",
         "GitHub"
+      ],
+      "category": [
+        "Web Development"
       ]
     },
     {
@@ -53,6 +65,9 @@
         "Core Data",
         "Git",
         "GitHub"
+      ],
+      "category": [
+        "Mobile Development"
       ]
     },
     {
@@ -64,6 +79,9 @@
         "Core Data",
         "Git",
         "GitHub"
+      ],
+      "category": [
+        "Mobile Development"
       ]
     },
     {
@@ -78,6 +96,11 @@
         "Responsive design",
         "Git",
         "GitHub"
+      ],
+      "category": [
+        "Web Development",
+        "Design and Styling",
+        "Testing and Version Control"
       ]
     },
     {
@@ -87,6 +110,9 @@
         "HTML",
         "CSS",
         "Responsive design"
+      ],
+      "category": [
+        "Design and Styling"
       ]
     },
     {
@@ -96,7 +122,8 @@
         "Tailwind",
         "CSS",
         "Responsive design"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "CSS",
@@ -105,7 +132,8 @@
         "Tailwind",
         "HTML",
         "Responsive design"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "SwiftUI",
@@ -113,19 +141,22 @@
         "Swift",
         "Git",
         "GitHub"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "MongoDB",
       "tags": [
         "RESTful API"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "SQL",
       "tags": [
         "RESTful API"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "RESTful API",
@@ -133,11 +164,13 @@
         "JavaScript",
         "MongoDB",
         "SQL"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "KMM",
-      "tags": []
+      "tags": [],
+      "category": []
     },
     {
       "name": "UIKit",
@@ -146,7 +179,8 @@
         "Objective-C",
         "Git",
         "GitHub"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Node.js",
@@ -155,7 +189,8 @@
         "TypeScript",
         "Git",
         "GitHub"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "jQuery",
@@ -163,7 +198,8 @@
         "JavaScript",
         "Git",
         "GitHub"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "npm",
@@ -171,7 +207,8 @@
         "JavaScript",
         "Git",
         "GitHub"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Core Data",
@@ -180,7 +217,8 @@
         "Objective-C",
         "Git",
         "GitHub"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "TDD",
@@ -189,7 +227,8 @@
         "TypeScript",
         "Git",
         "GitHub"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Responsive design",
@@ -200,7 +239,8 @@
         "Tailwind",
         "HTML",
         "CSS"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Git",
@@ -218,7 +258,8 @@
         "Core Data",
         "TDD",
         "Responsive design"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "GitHub",
@@ -236,7 +277,8 @@
         "Core Data",
         "TDD",
         "Responsive design"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Python",
@@ -244,7 +286,8 @@
         "Identifying and debugging issues",
         "Git",
         "GitHub"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Adaptability",
@@ -254,33 +297,38 @@
         "Collaboration",
         "Patience",
         "Critical thinking"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Time management",
       "tags": [
         "Organisation"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Problem-solving",
       "tags": [
         "Attention to detail",
         "Critical thinking"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Attention to detail",
       "tags": [
         "Problem-solving",
         "Critical thinking"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Organisation",
       "tags": [
         "Time management"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Teamwork",
@@ -289,7 +337,8 @@
         "Collaboration",
         "Patience",
         "Adaptability"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Empathy",
@@ -298,7 +347,8 @@
         "Collaboration",
         "Patience",
         "Adaptability"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Collaboration",
@@ -307,7 +357,8 @@
         "Empathy",
         "Patience",
         "Adaptability"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Patience",
@@ -316,7 +367,8 @@
         "Empathy",
         "Collaboration",
         "Adaptability"
-      ]
+      ],
+      "category": []
     },
     {
       "name": "Critical thinking",
@@ -324,7 +376,8 @@
         "Adaptability",
         "Problem-solving",
         "Attention to detail"
-      ]
+      ],
+      "category": []
     }
   ]
 }
