@@ -6,7 +6,7 @@ const SideBarLogo: React.FC = () => {
     <img
       className="my-8 mx-4 h-40 w-40\ rounded-full object-cover flex-1 bg-almost-white"
       src={portrait}
-      alt="protrait"
+      alt="portrait"
     />
   );
 };
