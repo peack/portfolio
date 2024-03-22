@@ -23,13 +23,24 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
     <Timeline
       sx={{
         [`& .${timelineOppositeContentClasses.root}`]: {
-          flex: 0.2,
+          flex: 0.15,
+          padding: 0.4,
+        },
+        [`& .${timelineOppositeContentClasses.root}:before`]: {
+          flex: 0,
+          padding: 0,
+        },
+        [`&`]: {
+          padding: 1,
         },
       }}
     >
       {experiences.map((experience, index) => (
         <TimelineItem key={index}>
-          <TimelineOppositeContent color="textSecondary">
+          <TimelineOppositeContent
+            color="textSecondary"
+            className="timeNoPadding"
+          >
             <div>{experience.date_start}</div>
             <div>{experience.date_end}</div>
           </TimelineOppositeContent>
