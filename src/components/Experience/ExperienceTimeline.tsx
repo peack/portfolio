@@ -23,7 +23,7 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
     <Timeline
       sx={{
         [`& .${timelineOppositeContentClasses.root}`]: {
-          flex: 0.15,
+          flex: 0.1,
           padding: 0.4,
         },
         [`& .${timelineOppositeContentClasses.root}:before`]: {
@@ -32,6 +32,20 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
         },
         [`&`]: {
           padding: 1,
+        },
+        "@media (min-width: 768px)": {
+          // Target screens less than 768px wide
+          [`& .${timelineOppositeContentClasses.root}`]: {
+            flex: 0.15, // Adjust flex value for smaller screens
+            padding: 3, // Adjust padding for smaller screens
+          },
+        },
+        "@media (min-width: 1024px)": {
+          // Target screens less than 768px wide
+          [`& .${timelineOppositeContentClasses.root}`]: {
+            flex: 0.2, // Adjust flex value for smaller screens
+            padding: 3, // Adjust padding for smaller screens
+          },
         },
       }}
     >
