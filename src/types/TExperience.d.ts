@@ -1,5 +1,6 @@
 export interface TExperience {
   title: string;
-  date?: string;
+  date_start?: string;
+  date_end?: string;
   description: string;
 }

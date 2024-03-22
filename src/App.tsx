@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import HomePage from "./components/HomePage";
 import ContactContainer from "./components/ContactContainer";
 import SkillContainerGrid from "./components/Skills/SkillContainerGrid";
+import React from "react";
 
 function App() {
   const [sideBarToggle, setSideBarToggle]: [
