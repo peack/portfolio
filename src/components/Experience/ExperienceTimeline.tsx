@@ -30,7 +30,8 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
       {experiences.map((experience, index) => (
         <TimelineItem key={index}>
           <TimelineOppositeContent color="textSecondary">
-            {experience.date}
+            <div>{experience.date_start}</div>
+            <div>{experience.date_end}</div>
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />
