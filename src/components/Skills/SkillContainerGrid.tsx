@@ -1,8 +1,4 @@
 import React from "react";
-import SkillPillContainer from "./SkillPillContainer.tsx";
-import SkillChart from "./SkillChart.tsx";
-import ContentBoxFlex from "../Layout/ContentBoxFlex.tsx";
-import SkillBarsComponent from "./SkillbarComponent.tsx";
 import ContentBoxGrid from "../Layout/ContentBoxGrid.tsx";
 import SkillBar from "./SkillBar.tsx";
 
@@ -12,12 +8,15 @@ interface SkillContainerProps {
 
 const SkillContainer: React.FC<SkillContainerProps> = ({ id }) => {
   return (
-    <ContentBoxFlex>
-      <div className="skillbar">
-        <SkillBar title="Web design" percent={30} />
-        {/* <SkillBar title="development" percent={70} /> */}
+    <ContentBoxGrid gridCol={2} gridRow={1} sizing={"min-h-20vh max-h-50vh"}>
+      <div className="">
+        <span>SKILLS</span>
       </div>
-    </ContentBoxFlex>
+      <SkillBar title="Web Design" percent={45} />
+      <SkillBar title="Stuff" percent={70} />
+      <SkillBar title="O e eew we" percent={30} />
+      <SkillBar title="A really really long skill title" percent={100} />
+    </ContentBoxGrid>
   );
 };
 
