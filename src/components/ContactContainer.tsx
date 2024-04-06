@@ -21,9 +21,6 @@ const ContactForm: React.FC<ContactContainerProps> = ({ id }) => {
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    // Here you can handle form submission, such as sending data to a server
-    console.log(formData);
-    // Reset the form after submission
     setFormData({
       name: "",
       email: "",

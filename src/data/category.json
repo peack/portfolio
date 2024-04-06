@@ -1,52 +1,73 @@
-{
-  "Web Development": [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Node.js",
-    "jQuery",
-    "HTML",
-    "CSS",
-    "Responsive design"
-  ],
-  "Mobile Development": [
-    "Swift",
-    "Objective-C",
-    "React Native",
-    "SwiftUI",
-    "UIKit"
-  ],
-  "Database and APIs": [
-    "Core Data",
-    "RESTful API",
-    "MongoDB",
-    "SQL"
-  ],
-  "Testing and Version Control": [
-    "TDD",
-    "Git",
-    "GitHub",
-    "npm"
-  ],
-  "Design and Styling": [
-    "Tailwind",
-    "UI/UX Design",
-    "Responsive design",
-    "HTML",
-    "CSS"
-  ],
-  "Soft Skills": [
-    "Teamwork",
-    "Empathy",
-    "Collaboration",
-    "Patience",
-    "Critical thinking",
-    "Organization",
-    "Attention to detail",
-    "Problem-solving"
-  ],
-  "Project Management": [
-    "Time management",
-    "Adaptability"
-  ]
-}
+[
+  {
+    "name": "Web Development",
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "jQuery",
+      "HTML",
+      "CSS",
+      "Responsive design"
+    ]
+  },
+  {
+    "name": "Mobile Development",
+    "skills": [
+      "Swift",
+      "Objective-C",
+      "React Native",
+      "SwiftUI",
+      "UIKit"
+    ]
+  },
+  {
+    "name": "Database and APIs",
+    "skills": [
+      "Core Data",
+      "RESTful API",
+      "MongoDB",
+      "SQL"
+    ]
+  },
+  {
+    "name": "Testing and Version Control",
+    "skills": [
+      "TDD",
+      "Git",
+      "GitHub",
+      "npm"
+    ]
+  },
+  {
+    "name": "Design and Styling",
+    "skills": [
+      "Tailwind",
+      "UI/UX Design",
+      "Responsive design",
+      "HTML",
+      "CSS"
+    ]
+  },
+  {
+    "name": "Soft Skills",
+    "skills": [
+      "Teamwork",
+      "Empathy",
+      "Collaboration",
+      "Patience",
+      "Critical thinking",
+      "Organization",
+      "Attention to detail",
+      "Problem-solving"
+    ]
+  },
+  {
+    "name": "Project Management",
+    "skills": [
+      "Time management",
+      "Adaptability"
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface SkillbarProps {
   title: string;
@@ -6,18 +6,33 @@ interface SkillbarProps {
 }
 
 const Skillbar: React.FC<SkillbarProps> = ({ title, percent }) => {
+  const [width, setWidth] = useState<number>(0);
+
+  useEffect(() => {
+    const timeout = Math.floor(Math.random() * 20) + 10;
+    const interval = setInterval(() => {
+      if (width < percent) {
+        setWidth((prevWidth) => prevWidth + 1);
+      } else {
+        clearInterval(interval);
+      }
+    }, timeout);
+
+    return () => clearInterval(interval);
+  }, [percent, width]);
+
   const progressStyle = {
-    width: `${percent}%`,
+    width: `${width}%`,
   };
 
   return (
     <>
-      <div className="skillbar p-2 lg:p-4 min-w-50vh sm:min-w-70vh lg:min-w-100vh flex-grow">
+      <div className="skillbar p-2 lg:p-4 min-w-40vh sm:min-w-70vh lg:min-w-100vh flex-grow">
         <div className="skill-bar:before"></div>
         <div className="skillbar-bar" style={progressStyle}>
           <span className="skillbar-title">{title}</span>
         </div>
-        <span className="skill-bar-percent">{percent}%</span>
+        <span className="skill-bar-percent">{width}%</span>
       </div>
     </>
   );

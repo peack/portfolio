@@ -122,6 +122,14 @@ h6 {
   width: 0;
   background: #111;
   transition-property: width, background-color;
+  -webkit-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -ms-transition: 0.4s linear;
+  -o-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  -moz-transition-property: width, background-color;
+  -o-transition-property: width, background-color;
 }
 
 .skillbar-title {
