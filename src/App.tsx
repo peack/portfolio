@@ -9,6 +9,7 @@ import HomePage from "./components/HomePage";
 import ContactContainer from "./components/ContactContainer";
 import SkillContainerGrid from "./components/Skills/SkillContainerGrid";
 import React from "react";
+import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 
 function App() {
   const [sideBarToggle, setSideBarToggle]: [
@@ -34,22 +35,25 @@ function App() {
   }, []);
 
   return (
-    <div className="flex">
-      {!sideBarToggle && (
-        <div className="absolute left-0 top-0 z-10 " onClick={handleSidebar}>
-          X
-        </div>
-      )}
-      {sideBarToggle && (
-        <Sidebar navItems={navItems} isSidebarOpen={sideBarToggle} />
-      )}
-      <Home isSidebarOpen={sideBarToggle}>
-        <HomePage id="home" />
-        <SkillContainerGrid id="skills" />
-        <ExperienceContainer experiences={experienceData} id="experience" />
-        <ContactContainer id="contact" />
-      </Home>
-    </div>
+    <>
+      <ScrollToHashElement behavior="smooth" inline="start" />
+      <div className="flex">
+        {!sideBarToggle && (
+          <div className="absolute left-0 top-0 z-10 " onClick={handleSidebar}>
+            X
+          </div>
+        )}
+        {sideBarToggle && (
+          <Sidebar navItems={navItems} isSidebarOpen={sideBarToggle} />
+        )}
+        <Home isSidebarOpen={sideBarToggle}>
+          <HomePage id="home" />
+          <SkillContainerGrid id="skills" />
+          <ExperienceContainer experiences={experienceData} id="experience" />
+          <ContactContainer id="contact" />
+        </Home>
+      </div>
+    </>
   );
 }
 
