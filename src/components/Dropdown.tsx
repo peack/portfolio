@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import DropdownItem from "./DropdownItem";
 
 export interface DropdownProps {
@@ -14,6 +14,24 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   const toggleDropdown = () => {
     setIsOpen((prevState) => !prevState);
   };
@@ -24,7 +42,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className="relative inline-block z-50 px-4 ">
+    <div ref={dropdownRef} className="relative inline-block z-50 px-4 ">
       <button
         className="bg-gray-300 hover:bg-gray-400 py-2 px-4 rounded inline-flex items-center"
         onClick={() => {
