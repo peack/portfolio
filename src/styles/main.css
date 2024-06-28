@@ -73,7 +73,7 @@ h6 {
   transition: margin-left 0.3s ease;
 }
 
-.sidebar a {
+.sidebarLinks a {
   position: relative;
   text-decoration: none;
   color: #fff; /* Set your desired text color */
@@ -81,7 +81,7 @@ h6 {
   margin-right: 3rem;
 }
 
-.sidebar a::after {
+.sidebarLinks a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -94,7 +94,7 @@ h6 {
   transition: transform 0.3s ease-out;
 }
 
-.sidebar a:hover::after {
+.sidebarLinks a:hover::after {
   transform-origin: center;
   transform: scaleX(1);
 }

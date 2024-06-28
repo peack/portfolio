@@ -2,6 +2,7 @@ import React from "react";
 import { TNavItem } from "../../types/TNavItem";
 import SideBarLogo from "./SideBarLogo.tsx";
 import SidebarHeader from "./SidebarHeader.tsx";
+import SidebarSocialContainer from "./SidebarSocialContainer.tsx";
 
 interface SidebarProps {
   navItems: TNavItem[];
@@ -20,20 +21,23 @@ const Sidebar: React.FC<SidebarProps> = ({
         <div className="flex">
           <SideBarLogo />
         </div>
-        <div className="flex-col content-center">
+        <div className="flex-col content-center sidebarLinks">
           <SidebarHeader title={"Mikael Galliot"} />
           {navItems.map(
             (item: TNavItem, index: React.Key | null | undefined) => (
               <a
                 key={index}
                 href={item.href}
-                className="m-2 text-white p-2 rounded block"
+                className="m-2 text-white p-2 rounded block "
               >
                 {item.name}
               </a>
-            ),
+            )
           )}
         </div>
+      </div>
+      <div className="absolute bottom-0 w-full">
+        <SidebarSocialContainer />
       </div>
     </div>
   );
