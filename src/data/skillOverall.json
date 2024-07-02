@@ -1,0 +1,28 @@
+{
+  "skills": [
+    {
+      "name": "WebDev",
+      "skill_rate": 75,
+      "tags": [],
+      "category": ["Overall"]
+    },
+    {
+      "name": "Mobile Dev",
+      "skill_rate": 80,
+      "tags": [],
+      "category": ["Overall"]
+    },
+    {
+      "name": "SoftSkills",
+      "skill_rate": 80,
+      "tags": [],
+      "category": ["Overall"]
+    },
+    {
+      "name": "Debugging",
+      "skill_rate": 90,
+      "tags": [],
+      "category": ["Overall"]
+    }
+  ]
+}

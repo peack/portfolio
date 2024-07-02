@@ -1,6 +1,7 @@
 import { TExperience } from "../../types/TExperience";
-import ExperienceCard from "./ExperienceCard.tsx";
 import React from "react";
+import ExperienceTimeline from "./ExperienceTimeline";
+import ContentBoxFlex from "../Layout/ContentBoxFlex";
 
 interface ExperienceContainerProps {
   experiences: TExperience[];
@@ -12,11 +13,9 @@ const ExperienceContainer: React.FC<ExperienceContainerProps> = ({
   id,
 }) => {
   return (
-    <div id={id} className="flex flex-wrap m-10">
-      {experiences.map((experience, index) => (
-        <ExperienceCard experience={experience} key={index} />
-      ))}
-    </div>
+    <ContentBoxFlex id={id}>
+      <ExperienceTimeline experiences={experiences} />
+    </ContentBoxFlex>
   );
 };
 
