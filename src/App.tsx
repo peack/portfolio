@@ -10,6 +10,7 @@ import ContactContainer from "./components/ContactContainer";
 import SkillContainerGrid from "./components/Skills/SkillContainerGrid";
 import React from "react";
 import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
+import Menu from "@mui/icons-material/Menu";
 
 function App() {
   const [sideBarToggle, setSideBarToggle]: [
@@ -23,7 +24,7 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      setSideBarToggle(window.innerWidth > 768); // Adjust the breakpoint as per your requirement
+      setSideBarToggle(window.innerWidth > 768);
     };
 
     handleResize(); // Initial check
@@ -34,17 +35,36 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleUrlChange = () => {
+      if (window.innerWidth < 768) {
+        console.log(true);
+
+        handleSidebar();
+      }
+    };
+
+    window.addEventListener("popstate", handleUrlChange);
+    return () => {
+      window.removeEventListener("popstate", handleUrlChange);
+    };
+  }, [location.pathname]);
+
   return (
     <>
       <ScrollToHashElement behavior="smooth" inline="start" />
       <div className="flex">
         {!sideBarToggle && (
           <div className="absolute left-0 top-0 z-10 " onClick={handleSidebar}>
-            X
+            <Menu />
           </div>
         )}
         {sideBarToggle && (
-          <Sidebar navItems={navItems} isSidebarOpen={sideBarToggle} />
+          <Sidebar
+            navItems={navItems}
+            isSidebarOpen={sideBarToggle}
+            handleSidebar={handleSidebar}
+          />
         )}
         <Home isSidebarOpen={sideBarToggle}>
           <HomePage id="home" />
