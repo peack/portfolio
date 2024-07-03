@@ -4,27 +4,27 @@ import { experienceData } from "./data/ExperienceData";
 import ExperienceContainer from "./components/Experience/ExperienceContainer";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { navItems } from "./data/NavItemsData";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import HomePage from "./components/HomePage";
 import ContactContainer from "./components/ContactContainer";
 import SkillContainerGrid from "./components/Skills/SkillContainerGrid";
-import React from "react";
 import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 import Menu from "@mui/icons-material/Menu";
+import React from "react";
 
 function App() {
-  const [sideBarToggle, setSideBarToggle]: [
+  const [isSidebarOpen, setIsSidebarOpen]: [
     boolean,
     (value: ((prevState: boolean) => boolean) | boolean) => void,
   ] = useState(true);
 
-  const handleSidebar = () => {
-    setSideBarToggle(!sideBarToggle);
-  };
+  const handleSidebar = useCallback(() => {
+    setIsSidebarOpen(!isSidebarOpen);
+  }, [isSidebarOpen]);
 
   useEffect(() => {
     const handleResize = () => {
-      setSideBarToggle(window.innerWidth > 768);
+      setIsSidebarOpen(window.innerWidth > 768);
     };
 
     handleResize(); // Initial check
@@ -48,25 +48,19 @@ function App() {
     return () => {
       window.removeEventListener("popstate", handleUrlChange);
     };
-  }, [location.pathname]);
+  }, [handleSidebar]);
 
   return (
     <>
       <ScrollToHashElement behavior="smooth" inline="start" />
-      <div className="flex">
-        {!sideBarToggle && (
-          <div className="absolute left-0 top-0 z-10 " onClick={handleSidebar}>
-            <Menu />
-          </div>
-        )}
-        {sideBarToggle && (
-          <Sidebar
-            navItems={navItems}
-            isSidebarOpen={sideBarToggle}
-            handleSidebar={handleSidebar}
-          />
-        )}
-        <Home isSidebarOpen={sideBarToggle}>
+      <div className="flex h-screen overflow-hidden main-content">
+        <Sidebar
+          navItems={navItems}
+          isSidebarOpen={isSidebarOpen}
+          handleSidebar={handleSidebar}
+        />
+        {!isSidebarOpen && <Menu onClick={handleSidebar} />}
+        <Home>
           <HomePage id="home" />
           <SkillContainerGrid id="skills" />
           <ExperienceContainer experiences={experienceData} id="experience" />
