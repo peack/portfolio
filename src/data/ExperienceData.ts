@@ -12,6 +12,7 @@ const experienceData: TExperience[] = [
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consequatur consequuntur ea magnam nemo temporibus ut? Commodi inventore velit vitae! Culpa, dignissimos est expedita fugiat iste porro possimus quo veritatis." +
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consequatur consequuntur ea magnam nemo temporibus ut? Commodi inventore velit vitae! Culpa, dignissimos est expedita fugiat iste porro possimus quo veritatis." +
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consequatur consequuntur ea magnam nemo temporibus ut? Commodi inventore velit vitae! Culpa, dignissimos est expedita fugiat iste porro possimus quo veritatis.",
+    id: "0",
   },
   {
     title: "Experience 2",
@@ -22,6 +23,7 @@ const experienceData: TExperience[] = [
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consequatur consequuntur ea magnam nemo temporibus ut? Commodi inventore velit vitae! Culpa, dignissimos est expedita fugiat iste porro possimus quo veritatis." +
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consequatur consequuntur ea magnam nemo temporibus ut? Commodi inventore velit vitae! Culpa, dignissimos est expedita fugiat iste porro possimus quo veritatis." +
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consequatur consequuntur ea magnam nemo temporibus ut? Commodi inventore velit vitae! Culpa, dignissimos est expedita fugiat iste porro possimus quo veritatis.",
+    id: "1",
   },
   {
     title: "Experience 3",
@@ -33,6 +35,7 @@ const experienceData: TExperience[] = [
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consequatur consequuntur ea magnam nemo temporibus ut? Commodi inventore velit vitae! Culpa, dignissimos est expedita fugiat iste porro possimus quo veritatis." +
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consequatur consequuntur ea magnam nemo temporibus ut? Commodi inventore velit vitae! Culpa, dignissimos est expedita fugiat iste porro possimus quo veritatis." +
       "",
+    id: "2",
   },
 ];
 

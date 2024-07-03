@@ -11,6 +11,7 @@ import { TimelineContent } from "@mui/lab";
 import { TimelineDot } from "@mui/lab";
 import { TExperience } from "../../types/TExperience";
 import ExperienceCard from "./ExperienceCard";
+import { useState } from "react";
 
 interface ExperienceTimelineProps {
   experiences: TExperience[];
@@ -19,6 +20,13 @@ interface ExperienceTimelineProps {
 const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
   experiences,
 }) => {
+  const [activeExperienceId, setActiveExperienceId] = useState<string | null>(
+    null
+  );
+
+  const toggleOpen = (id: string) => {
+    setActiveExperienceId(activeExperienceId === id ? null : id);
+  };
   return (
     <Timeline
       sx={{
@@ -63,7 +71,12 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <ExperienceCard experience={experience} key={index} />
+            <ExperienceCard
+              experience={experience}
+              key={index}
+              isOpen={activeExperienceId === experience.id}
+              toggleOpen={toggleOpen}
+            />
           </TimelineContent>
         </TimelineItem>
       ))}
