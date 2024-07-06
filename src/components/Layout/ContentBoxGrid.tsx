@@ -13,7 +13,7 @@ const ContentBoxGrid: React.FC<ContentBoxGridProps> = ({
   id,
   gridCol,
   gridRow,
-  sizing = true,
+  sizing = false,
 }) => {
   return (
     <div

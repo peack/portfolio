@@ -27,15 +27,23 @@ const Skillbar: React.FC<SkillbarProps> = ({ title, percent }) => {
 
   return (
     <>
-      <div className="skillbar p-2 lg:p-4 min-w-40vh sm:min-w-70vh lg:min-w-100vh flex-grow">
-        <div className="skill-bar:before"></div>
-        <div className="skillbar-bar" style={progressStyle}>
-          <span className="skillbar-title">{title}</span>
+      {window.innerWidth > 300 ? (
+        <div className="skillbar p-2 lg:p-4 sm:min-w-10vh min-w-40vh  lg:min-w-70vh flex-grow overflow-x-hidden">
+          <div className="skill-bar:before"></div>
+          <div className="skillbar-bar" style={progressStyle}>
+            <span className="skillbar-title">{title}</span>
+          </div>
+          <span className="skill-bar-percent">{width}%</span>
         </div>
-        <span className="skill-bar-percent">{width}%</span>
-      </div>
+      ) : (
+        <>
+          <div className="">
+            <span className="skillbar-title">{title}</span>
+          </div>
+          <span className="skill-bar-percent">{width}%</span>
+        </>
+      )}
     </>
   );
 };
-
 export default Skillbar;
