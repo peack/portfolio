@@ -18,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   return (
     <div
-      className={` ${isSidebarOpen ? "w-48" : "w-0"} flex-shrink-0 text-white flex overflow-hidden transition-all duration-300 overflow-y-auto  bg-gray-800 h-screen  transform ${isSidebarOpen ? "" : "-translate-x-full"}`}
+      className={` ${isSidebarOpen ? "w-48" : "w-0"} flex-shrink-0 text-white flex overflow-hidden transition-all duration-300 overflow-y-auto  bg-gray-800 h-screen  transform ${isSidebarOpen ? "" : "-translate-x-full"} font-[RobotoSlab-Bold]`}
     >
       <div className="container justify-center items-center text-center">
         <span className="flex justify-end" onClick={handleSidebar}>

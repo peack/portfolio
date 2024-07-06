@@ -11,7 +11,10 @@ const HomePage: React.FC<HomePageProps> = ({ id }) => {
   return (
     <ContentBoxGrid id={id}>
       <div className={`col-span-1 row-span-2 flex items-center`}>
-        <h1>MIKAEL GALLIOT</h1>
+        <div className=" font-[Molot] text-5xl p-4">
+          <span className="">MIKAEL </span>
+          <span className=" text-right">&nbsp;&nbsp;GALLIOT</span>
+        </div>
       </div>
       <div className="col-span-2 row-span-2 flex items-center justify-center lg:items-end lg:justify-end  ">
         <img

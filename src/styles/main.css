@@ -15,6 +15,30 @@
 .main-content::-webkit-scrollbar {
   display: none;
 }
+@font-face {
+  font-family: "RobotoSlab-Bold";
+  src:
+    local("RobotoSlab-Bold"),
+    url("../fonts/Roboto/RobotoSlab-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Molot";
+  src:
+    local("Molot"),
+    url("../fonts/Molot.otf") format("truetype");
+}
+@font-face {
+  font-family: "RobotoSlab-Regular";
+  src: url("../fonts/Roboto/RobotoSlab-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "RobotoSlab-Light";
+  src: url("../fonts/Roboto/RobotoSlab-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "RobotoSlab-LightItalic";
+  src: url("../fonts/Roboto/RobotoSlab-LightItalic.ttf") format("truetype");
+}
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .sidebar,
