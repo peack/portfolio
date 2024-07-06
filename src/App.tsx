@@ -1,16 +1,17 @@
-// import "./,.css";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { useCallback, useEffect, useState } from "react";
+import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 import Home from "./components/Home";
-import { experienceData } from "./data/ExperienceData";
 import ExperienceContainer from "./components/Experience/ExperienceContainer";
 import Sidebar from "./components/Sidebar/Sidebar";
-import { navItems } from "./data/NavItemsData";
-import { useCallback, useEffect, useState } from "react";
 import HomePage from "./components/HomePage";
 import ContactContainer from "./components/ContactContainer";
 import SkillContainerGrid from "./components/Skills/SkillContainerGrid";
-import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 import Menu from "@mui/icons-material/Menu";
-import React from "react";
+import { TNavItem } from "./types/TNavItem";
+import { TExperience } from "./types/TExperience";
+import experienceData from "./data/ExperienceData.json";
+import navItemsData from "./data/NavItemsData.json";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen]: [
@@ -50,6 +51,9 @@ function App() {
     };
   }, [handleSidebar]);
 
+  const navItems: TNavItem[] = navItemsData.links;
+  const experiences: TExperience[] = experienceData.experiences;
+
   return (
     <>
       <ScrollToHashElement behavior="smooth" inline="start" />
@@ -63,7 +67,7 @@ function App() {
         <Home>
           <HomePage id="home" />
           <SkillContainerGrid id="skills" />
-          <ExperienceContainer experiences={experienceData} id="experience" />
+          <ExperienceContainer experiences={experiences} id="experience" />
           <ContactContainer id="contact" />
         </Home>
       </div>
