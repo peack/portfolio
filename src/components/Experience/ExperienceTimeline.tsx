@@ -63,8 +63,10 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
             color="textSecondary"
             className="timeNoPadding"
           >
-            <div>{experience.date_start}</div>
-            <div>{experience.date_end}</div>
+            <div className="font-[RobotoSlab-Bold]">
+              {experience.date_start}
+            </div>
+            <div className="font-[RobotoSlab-Bold]">{experience.date_end}</div>
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />

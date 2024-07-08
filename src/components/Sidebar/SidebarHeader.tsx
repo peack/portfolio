@@ -10,7 +10,7 @@ const SidebarHeader: React.FC<SidebarHeaderProps> = ({
   description,
 }) => {
   return (
-    <div className="font-extrabold py-5">
+    <div className="font-sans-bold text-xl py-5">
       <h2>{title}</h2>
       <p>{description}</p>
     </div>

@@ -10,9 +10,11 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ id }) => {
   return (
     <ContentBoxGrid id={id}>
-      <div className={`col-span-1 row-span-2 flex items-center`}>
-        <div className=" font-[Molot] text-5xl p-4">
-          <span className="">MIKAEL </span>
+      <div
+        className={`name-title col-span-1 row-span-2 flex items-center justify-center`}
+      >
+        <div className=" font-[Molot] text-5xl pl-5 p-4">
+          <span className="">MIKAEL </span> <br />
           <span className=" text-right">&nbsp;&nbsp;GALLIOT</span>
         </div>
       </div>
