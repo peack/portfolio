@@ -57,7 +57,7 @@ function App() {
   return (
     <>
       <ScrollToHashElement behavior="smooth" inline="start" />
-      <div className="flex h-screen overflow-hidden main-content">
+      <div className="flex h-[calc(100dvh)] overflow-hidden main-content">
         <Sidebar
           navItems={navItems}
           isSidebarOpen={isSidebarOpen}

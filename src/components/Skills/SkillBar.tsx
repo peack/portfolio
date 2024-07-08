@@ -28,7 +28,7 @@ const Skillbar: React.FC<SkillbarProps> = ({ title, percent }) => {
   return (
     <>
       {window.innerWidth > 300 ? (
-        <div className="skillbar p-2 lg:p-4 sm:min-w-10vh min-w-40vh  lg:min-w-70vh flex-grow overflow-x-hidden">
+        <div className="skillbar p-2 lg:p-4 sm:min-w-10vh lg:min-w-70vh flex-grow overflow-x-hidden ">
           <div className="skill-bar:before"></div>
           <div className="skillbar-bar" style={progressStyle}>
             <span className="skillbar-title">{title}</span>

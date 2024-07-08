@@ -11,7 +11,7 @@ const SkillContainer: React.FC<SkillContainerProps> = ({ id }) => {
       id={id}
       gridCol={2}
       gridRow={1}
-      sizing={"min-h-20vh max-h-50vh"}
+      sizing={"min-h-20vh max-h-50vh max-w-90vw"}
     >
       <Skills />
     </ContentBoxGrid>
