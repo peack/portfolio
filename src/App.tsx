@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import ExperienceContainer from "./components/Experience/ExperienceContainer";
 import Sidebar from "./components/Sidebar/Sidebar";
 import HomePage from "./components/HomePage";
-import ContactContainer from "./components/ContactContainer";
+import ContactContainer from "./components/Contact/ContactContainer";
 import SkillContainerGrid from "./components/Skills/SkillContainerGrid";
 import Menu from "@mui/icons-material/Menu";
 import { TNavItem } from "./types/TNavItem";

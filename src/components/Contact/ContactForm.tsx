@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-interface ContactContainerProps {
+interface ContactFormProps {
   id: string;
 }
 
-const ContactForm: React.FC<ContactContainerProps> = ({ id }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ id }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
