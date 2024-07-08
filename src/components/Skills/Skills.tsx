@@ -89,7 +89,7 @@ export const Skills: React.FC = () => {
   return (
     <>
       <div className="flex justify-between">
-        <span className="text-xl font-bold">SKILLS</span>
+        <span className="text-xl font-[RobotoSlab-Bold]">SKILLS</span>
         <Dropdown
           items={catArray}
           activeCat={activeCat}

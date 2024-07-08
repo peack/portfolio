@@ -30,6 +30,7 @@ const ContentBoxGrid: React.FC<ContentBoxGridProps> = ({
             m-2 mr-7 lg:m-7 
             font-sans 
             min-w-fit
+            min-h-fit
             ${extraClass}
             `}
     >
