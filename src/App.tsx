@@ -10,8 +10,8 @@ import SkillContainerGrid from "./components/Skills/SkillContainerGrid";
 import Menu from "@mui/icons-material/Menu";
 import { TNavItem } from "./types/TNavItem";
 import { TExperience } from "./types/TExperience";
-import experienceData from "./data/ExperienceData.json";
-import navItemsData from "./data/NavItemsData.json";
+import experienceData from "./data/experienceData.json";
+import navItemsData from "./data/navItemsData.json";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen]: [

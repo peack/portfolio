@@ -28,7 +28,7 @@
     },
     {
       "name": "JavaScript",
-      "skill_rate": 50,
+      "skill_rate": 70,
       "tags": [
         "Identifying and debugging issues",
         "React",
@@ -43,7 +43,7 @@
     },
     {
       "name": "TypeScript",
-      "skill_rate": 50,
+      "skill_rate": 68,
       "tags": [
         "Identifying and debugging issues",
         "React",
@@ -56,7 +56,7 @@
     },
     {
       "name": "Swift",
-      "skill_rate": 50,
+      "skill_rate": 85,
       "tags": [
         "Identifying and debugging issues",
         "SwiftUI",
@@ -70,7 +70,7 @@
     },
     {
       "name": "Objective-C",
-      "skill_rate": 50,
+      "skill_rate": 65,
       "tags": [
         "Identifying and debugging issues",
         "Swift",
@@ -83,7 +83,7 @@
     },
     {
       "name": "React",
-      "skill_rate": 88,
+      "skill_rate": 79,
       "tags": [
         "Identifying and debugging issues",
         "JavaScript",
@@ -103,7 +103,7 @@
     },
     {
       "name": "Tailwind",
-      "skill_rate": 80,
+      "skill_rate": 75,
       "tags": ["React", "HTML", "CSS", "Responsive design"],
       "category": ["Design and Styling"]
     },
@@ -115,7 +115,7 @@
     },
     {
       "name": "CSS",
-      "skill_rate": 80,
+      "skill_rate": 75,
       "tags": ["React", "Tailwind", "HTML", "Responsive design"],
       "category": []
     },
@@ -145,55 +145,55 @@
     },
     {
       "name": "KMM",
-      "skill_rate": 77,
+      "skill_rate": 69,
       "tags": [],
       "category": []
     },
     {
       "name": "UIKit",
-      "skill_rate": 80,
+      "skill_rate": 85,
       "tags": ["Swift", "Objective-C", "Git", "GitHub"],
       "category": []
     },
     {
       "name": "Node.js",
-      "skill_rate": 50,
+      "skill_rate": 75,
       "tags": ["JavaScript", "TypeScript", "Git", "GitHub"],
       "category": []
     },
     {
       "name": "jQuery",
-      "skill_rate": 50,
+      "skill_rate": 65,
       "tags": ["JavaScript", "Git", "GitHub"],
       "category": []
     },
     {
       "name": "npm",
-      "skill_rate": 50,
+      "skill_rate": 70,
       "tags": ["JavaScript", "Git", "GitHub"],
       "category": []
     },
     {
       "name": "Core Data",
-      "skill_rate": 50,
+      "skill_rate": 70,
       "tags": ["Swift", "Objective-C", "Git", "GitHub"],
       "category": []
     },
     {
       "name": "TDD",
-      "skill_rate": 50,
+      "skill_rate": 80,
       "tags": ["JavaScript", "TypeScript", "Git", "GitHub"],
       "category": []
     },
     {
       "name": "Responsive design",
-      "skill_rate": 50,
+      "skill_rate": 90,
       "tags": ["JavaScript", "TypeScript", "React", "Tailwind", "HTML", "CSS"],
       "category": []
     },
     {
       "name": "Git",
-      "skill_rate": 50,
+      "skill_rate": 80,
       "tags": [
         "JavaScript",
         "TypeScript",
@@ -213,7 +213,7 @@
     },
     {
       "name": "GitHub",
-      "skill_rate": 50,
+      "skill_rate": 80,
       "tags": [
         "JavaScript",
         "TypeScript",
@@ -233,13 +233,13 @@
     },
     {
       "name": "Python",
-      "skill_rate": 50,
+      "skill_rate": 70,
       "tags": ["Identifying and debugging issues", "Git", "GitHub"],
       "category": []
     },
     {
       "name": "Adaptability",
-      "skill_rate": 50,
+      "skill_rate": 95,
       "tags": [
         "Teamwork",
         "Empathy",
@@ -251,55 +251,55 @@
     },
     {
       "name": "Time management",
-      "skill_rate": 50,
+      "skill_rate": 65,
       "tags": ["Organisation"],
       "category": []
     },
     {
       "name": "Problem-solving",
-      "skill_rate": 50,
+      "skill_rate": 95,
       "tags": ["Attention to detail", "Critical thinking"],
       "category": []
     },
     {
       "name": "Attention to detail",
-      "skill_rate": 50,
+      "skill_rate": 95,
       "tags": ["Problem-solving", "Critical thinking"],
       "category": []
     },
     {
       "name": "Organisation",
-      "skill_rate": 50,
+      "skill_rate": 70,
       "tags": ["Time management"],
       "category": []
     },
     {
       "name": "Teamwork",
-      "skill_rate": 50,
+      "skill_rate": 80,
       "tags": ["Empathy", "Collaboration", "Patience", "Adaptability"],
       "category": []
     },
     {
       "name": "Empathy",
-      "skill_rate": 50,
+      "skill_rate": 75,
       "tags": ["Teamwork", "Collaboration", "Patience", "Adaptability"],
       "category": []
     },
     {
       "name": "Collaboration",
-      "skill_rate": 50,
+      "skill_rate": 80,
       "tags": ["Teamwork", "Empathy", "Patience", "Adaptability"],
       "category": []
     },
     {
       "name": "Patience",
-      "skill_rate": 50,
+      "skill_rate": 90,
       "tags": ["Teamwork", "Empathy", "Collaboration", "Adaptability"],
       "category": []
     },
     {
       "name": "Critical thinking",
-      "skill_rate": 50,
+      "skill_rate": 95,
       "tags": ["Adaptability", "Problem-solving", "Attention to detail"],
       "category": []
     }

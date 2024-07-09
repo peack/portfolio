@@ -14,6 +14,10 @@ const ExperienceContainer: React.FC<ExperienceContainerProps> = ({
 }) => {
   return (
     <ContentBoxFlex id={id}>
+      <span className="col-auto text-xl font-[RobotoSlab-Bold] p-3 ">
+        Projects
+      </span>
+      <br />
       <ExperienceTimeline experiences={experiences} />
     </ContentBoxFlex>
   );

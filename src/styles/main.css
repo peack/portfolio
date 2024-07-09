@@ -47,6 +47,11 @@
   scrollbar-width: none; /* Firefox */
 }
 
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 body {
   line-height: 1.5;
   background-color: #c9c7c0ff;

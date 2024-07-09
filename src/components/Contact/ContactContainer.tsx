@@ -13,9 +13,12 @@ const ContactContainer: React.FC<ContactContainerProps> = ({
       <span className="col-auto text-xl font-[RobotoSlab-Bold]">Contact</span>{" "}
       <br />
       <div className="col-span-3 ">
-        <span>For any enquiries please contact me at &nbsp;</span>
-        <a className="font-[RobotoSlab-Bold]" href="mailto:user@example.com">
-          user@example.com
+        <span>For any enquiries please contact me at&nbsp;</span>
+        <a
+          className="font-[RobotoSlab-Bold]"
+          href="mailto:mikael.galliot@proton.me"
+        >
+          mikael.galliot@proton.me
         </a>
       </div>
     </ContentBoxGrid>

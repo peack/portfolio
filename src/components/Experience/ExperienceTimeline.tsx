@@ -42,17 +42,15 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
           padding: 1,
         },
         "@media (min-width: 768px)": {
-          // Target screens less than 768px wide
           [`& .${timelineOppositeContentClasses.root}`]: {
-            flex: 0.15, // Adjust flex value for smaller screens
-            padding: 3, // Adjust padding for smaller screens
+            flex: 0.15,
+            padding: 2,
           },
         },
         "@media (min-width: 1024px)": {
-          // Target screens less than 768px wide
           [`& .${timelineOppositeContentClasses.root}`]: {
-            flex: 0.2, // Adjust flex value for smaller screens
-            padding: 3, // Adjust padding for smaller screens
+            flex: 0.2,
+            padding: 2,
           },
         },
       }}

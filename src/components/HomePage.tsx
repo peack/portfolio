@@ -1,5 +1,5 @@
 import meTall from "../assets/me_wizard_2.jpg";
-import introData from "../data/Intro.json";
+import introData from "../data/intro.json";
 import React from "react";
 import ContentBoxGrid from "./Layout/ContentBoxGrid.tsx";
 
@@ -24,13 +24,13 @@ const HomePage: React.FC<HomePageProps> = ({ id }) => {
       </div>
       <div className="col-span-2 sm:col-span-2 row-span-2 flex items-center justify-center lg:items-end lg:justify-end order-1 ">
         <img
-          className="rounded-2xl object-cover bg-almost-white border-4 max-h-40vh md:max-h-60vh lg:max-h-50vh"
+          className="rounded-2xl object-cover bg-almost-white border-4 max-h-40vh md:max-h-40vh lg:max-h-50vh"
           src={meTall}
           alt="tall portrait"
         />
       </div>
       <div className="col-span-3 order-4 content-center">
-        <p>{introData.introduction}</p>
+        <p style={{ whiteSpace: "pre-line" }}>{introData.introduction}</p>
       </div>
     </ContentBoxGrid>
   );
