@@ -27,11 +27,11 @@
       "references": [
         {
           "name": "Indeed Flex - Job Search",
-          "iconLink": "/src/assets/icons/appIcons/indeedFlex.png",
+          "iconLink": "/indeedFlex.png",
           "href": "https://apps.apple.com/us/app/indeed-flex-job-search/id1013812731"
         },{
           "name": "Flex Client",
-          "iconLink": "/src/assets/icons/appIcons/flexClient.png",
+          "iconLink": "/flexClient.png",
           "href": "https://apps.apple.com/gb/app/flex-client/id1633022875"
         }
       ]
@@ -45,7 +45,7 @@
       "references": [
         {
           "name": "Courtside 1891",
-          "iconLink": "/src/assets/icons/appIcons/courtside1891.png",
+          "iconLink": "/courtside1891.png",
           "href": "https://apps.apple.com/us/app/courtside-1891/id1606716397"
         }
       ]
@@ -58,7 +58,7 @@
       "references": [
         {
           "name": "Hayaa Qatar ",
-          "iconLink": "/src/assets/icons/appIcons/hayya.png",
+          "iconLink": "/hayya.png",
           "href": "https://apps.apple.com/us/app/hayya-to-qatar/id1593845586"
         }
       ]
