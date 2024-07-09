@@ -1,30 +1,31 @@
-// import "./,.css";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { useCallback, useEffect, useState } from "react";
+import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 import Home from "./components/Home";
-import { experienceData } from "./data/ExperienceData";
 import ExperienceContainer from "./components/Experience/ExperienceContainer";
 import Sidebar from "./components/Sidebar/Sidebar";
-import { navItems } from "./data/NavItemsData";
-import { useEffect, useState } from "react";
 import HomePage from "./components/HomePage";
-import ContactContainer from "./components/ContactContainer";
+import ContactContainer from "./components/Contact/ContactContainer";
 import SkillContainerGrid from "./components/Skills/SkillContainerGrid";
-import React from "react";
-import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 import Menu from "@mui/icons-material/Menu";
+import { TNavItem } from "./types/TNavItem";
+import { TExperience } from "./types/TExperience";
+import experienceData from "./data/experienceData.json";
+import navItemsData from "./data/navItemsData.json";
 
 function App() {
-  const [sideBarToggle, setSideBarToggle]: [
+  const [isSidebarOpen, setIsSidebarOpen]: [
     boolean,
     (value: ((prevState: boolean) => boolean) | boolean) => void,
   ] = useState(true);
 
-  const handleSidebar = () => {
-    setSideBarToggle(!sideBarToggle);
-  };
+  const handleSidebar = useCallback(() => {
+    setIsSidebarOpen(!isSidebarOpen);
+  }, [isSidebarOpen]);
 
   useEffect(() => {
     const handleResize = () => {
-      setSideBarToggle(window.innerWidth > 768);
+      setIsSidebarOpen(window.innerWidth > 768);
     };
 
     handleResize(); // Initial check
@@ -48,28 +49,25 @@ function App() {
     return () => {
       window.removeEventListener("popstate", handleUrlChange);
     };
-  }, [location.pathname]);
+  }, [handleSidebar]);
+
+  const navItems: TNavItem[] = navItemsData.links;
+  const experiences: TExperience[] = experienceData.experiences;
 
   return (
     <>
       <ScrollToHashElement behavior="smooth" inline="start" />
-      <div className="flex">
-        {!sideBarToggle && (
-          <div className="absolute left-0 top-0 z-10 " onClick={handleSidebar}>
-            <Menu />
-          </div>
-        )}
-        {sideBarToggle && (
-          <Sidebar
-            navItems={navItems}
-            isSidebarOpen={sideBarToggle}
-            handleSidebar={handleSidebar}
-          />
-        )}
-        <Home isSidebarOpen={sideBarToggle}>
+      <div className="flex h-[calc(100dvh)] overflow-hidden main-content">
+        <Sidebar
+          navItems={navItems}
+          isSidebarOpen={isSidebarOpen}
+          handleSidebar={handleSidebar}
+        />
+        {!isSidebarOpen && <Menu onClick={handleSidebar} />}
+        <Home>
           <HomePage id="home" />
           <SkillContainerGrid id="skills" />
-          <ExperienceContainer experiences={experienceData} id="experience" />
+          <ExperienceContainer experiences={experiences} id="experience" />
           <ContactContainer id="contact" />
         </Home>
       </div>

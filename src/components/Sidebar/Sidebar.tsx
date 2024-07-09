@@ -18,17 +18,17 @@ const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   return (
     <div
-      className={`sidebar overflow-auto bg-gray-800 h-screen w-48 transition-transform transform ${isSidebarOpen ? "" : "-translate-x-full"}`}
+      className={` ${isSidebarOpen ? "w-48" : "w-0"} content-box flex-shrink-0 text-white flex overflow-hidden transition-all duration-300 overflow-y-hidden bg-gray-800 h-[calc(100dvh)] transform ${isSidebarOpen ? "" : "-translate-x-full"} font-[RobotoSlab-Bold]`}
     >
       <div className="container justify-center items-center text-center">
-        <div className="flex justify-end" onClick={handleSidebar}>
+        <span className="flex justify-end" onClick={handleSidebar}>
           <MenuIconOpen />
-        </div>
+        </span>
         <SideBarLogo />
         <div className="flex justify-center items-center">
           <SidebarHeader title={"Mikael Galliot"} />
         </div>
-        <div className="flex-col content-center sidebarLinks nav-links">
+        <div className="flex-col flex-shrink content-center sidebarLinks nav-links overflow-y-auto">
           {navItems.map(
             (item: TNavItem, index: React.Key | null | undefined) => (
               <a
@@ -42,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           )}
         </div>
       </div>
-      <div className="absolute bottom-0 w-full">
+      <div className="fixed bottom-0 w-full backdrop-blur-xl">
         <SidebarSocialContainer />
       </div>
     </div>

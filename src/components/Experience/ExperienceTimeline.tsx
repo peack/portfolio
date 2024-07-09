@@ -11,6 +11,7 @@ import { TimelineContent } from "@mui/lab";
 import { TimelineDot } from "@mui/lab";
 import { TExperience } from "../../types/TExperience";
 import ExperienceCard from "./ExperienceCard";
+import { useState } from "react";
 
 interface ExperienceTimelineProps {
   experiences: TExperience[];
@@ -19,6 +20,13 @@ interface ExperienceTimelineProps {
 const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
   experiences,
 }) => {
+  const [activeExperienceId, setActiveExperienceId] = useState<string | null>(
+    null
+  );
+
+  const toggleOpen = (id: string) => {
+    setActiveExperienceId(activeExperienceId === id ? null : id);
+  };
   return (
     <Timeline
       sx={{
@@ -34,17 +42,15 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
           padding: 1,
         },
         "@media (min-width: 768px)": {
-          // Target screens less than 768px wide
           [`& .${timelineOppositeContentClasses.root}`]: {
-            flex: 0.15, // Adjust flex value for smaller screens
-            padding: 3, // Adjust padding for smaller screens
+            flex: 0.15,
+            padding: 2,
           },
         },
         "@media (min-width: 1024px)": {
-          // Target screens less than 768px wide
           [`& .${timelineOppositeContentClasses.root}`]: {
-            flex: 0.2, // Adjust flex value for smaller screens
-            padding: 3, // Adjust padding for smaller screens
+            flex: 0.2,
+            padding: 2,
           },
         },
       }}
@@ -55,15 +61,22 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
             color="textSecondary"
             className="timeNoPadding"
           >
-            <div>{experience.date_start}</div>
-            <div>{experience.date_end}</div>
+            <div className="font-[RobotoSlab-Bold]">
+              {experience.date_start}
+            </div>
+            <div className="font-[RobotoSlab-Bold]">{experience.date_end}</div>
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <ExperienceCard experience={experience} key={index} />
+            <ExperienceCard
+              experience={experience}
+              key={index}
+              isOpen={activeExperienceId === experience.id}
+              toggleOpen={toggleOpen}
+            />
           </TimelineContent>
         </TimelineItem>
       ))}

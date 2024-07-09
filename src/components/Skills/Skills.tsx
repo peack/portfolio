@@ -88,8 +88,8 @@ export const Skills: React.FC = () => {
 
   return (
     <>
-      <div className="flex justify-between">
-        <span>SKILLS</span>
+      <div className="flex justify-between no-scrollbar ">
+        <span className="text-xl font-[RobotoSlab-Bold]">Skills</span>
         <Dropdown
           items={catArray}
           activeCat={activeCat}

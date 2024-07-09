@@ -2,6 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      'sans': ["RobotoSlab-Regular", "RobotoSlab-Bold", "RobotoSlab-Light", "RobotoSlab-LightItalic", 'sans-serif', "Molot"],
+    },
     extend: {
       minWidth: {
         '10vh': '10vh',
