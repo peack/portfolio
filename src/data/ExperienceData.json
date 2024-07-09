@@ -27,11 +27,11 @@
       "references": [
         {
           "name": "Indeed Flex - Job Search",
-          "iconLink": "/indeedFlex.png",
+          "iconLink": "/indeedflex.png",
           "href": "https://apps.apple.com/us/app/indeed-flex-job-search/id1013812731"
         },{
           "name": "Flex Client",
-          "iconLink": "/flexClient.png",
+          "iconLink": "/flexclient.png",
           "href": "https://apps.apple.com/gb/app/flex-client/id1633022875"
         }
       ]
