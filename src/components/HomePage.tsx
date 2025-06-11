@@ -1,39 +1,47 @@
-import meTall from "../assets/me_wizard_2.jpg";
-import introData from "../data/intro.json";
-import React from "react";
-import ContentBoxGrid from "./Layout/ContentBoxGrid.tsx";
+import introData from "../data/intro.json"
+import React from "react"
+import { motion } from "framer-motion"
+import MyHero from "./MyHero"
 
 interface HomePageProps {
-  id: string;
+  id: string
 }
 
 const HomePage: React.FC<HomePageProps> = ({ id }) => {
   return (
-    <ContentBoxGrid
-      id={id}
-      extraClass="grid-cols-1 md:grid-cols-3"
-      sizing="md:max-h-80vh  "
-    >
-      <div
-        className={`name-title sm:col-span-1 sm:order-1 row-span-2 flex items-center justify-center order-2 col-span-full  `}
-      >
-        <div className=" font-[Molot] text-5xl pl-5 p-4  ">
-          <span className="">MIKAEL </span> <br />
-          <span className=" text-right">&nbsp;&nbsp;GALLIOT</span>
-        </div>
-      </div>
-      <div className="col-span-2 sm:col-span-2 row-span-2 flex items-center justify-center lg:items-end lg:justify-end order-1 ">
-        <img
-          className="rounded-2xl object-cover bg-almost-white border-4 max-h-40vh md:max-h-40vh lg:max-h-50vh"
-          src={meTall}
-          alt="tall portrait"
-        />
-      </div>
-      <div className="col-span-3 order-4 content-center">
-        <p style={{ whiteSpace: "pre-line" }}>{introData.introduction}</p>
-      </div>
-    </ContentBoxGrid>
-  );
-};
+    <div className="bg-background">
+      {/* Hero Section */}
+      <MyHero id={id} />
 
-export default HomePage;
+      {/* Content Section */}
+      <section id="content" className="relative z-10 py-20 px-6 md:px-12">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">About Me</h2>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="prose prose-lg max-w-none text-foreground/90"
+          >
+            <p className="text-lg leading-relaxed text-center" style={{ whiteSpace: "pre-line" }}>
+              {introData.introduction}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default HomePage
