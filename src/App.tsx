@@ -17,8 +17,8 @@ function App() {
 
   return (
     <>
-      <MyNavBar navItems={navItems} />
-      <div className="pt-16 lg:pt-16 pb-20 lg:pb-0 min-h-screen">
+      {/* <MyNavBar navItems={navItems} /> */}
+      <div className="min-h-screen">
         <Home>
           <HomePage id="home" />
           <SkillContainerGrid id="skills" />

@@ -69,7 +69,7 @@ const MyHero: React.FC<MyHeroProps> = ({ id }) => {
   }
 
   return (
-    <section id={id} className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section id={id} className="relative h-dvh flex items-center justify-center overflow-hidden bg-black">
       {/* CRT Screen Effect */}
       <div className="absolute inset-0 bg-black">
         {/* Scanlines */}
@@ -82,7 +82,7 @@ const MyHero: React.FC<MyHeroProps> = ({ id }) => {
         />
 
         {/* CRT Curvature & Glow */}
-        <div className="absolute inset-4 bg-black rounded-lg shadow-[inset_0_0_100px_rgba(0,255,0,0.1)] border border-green-500/20" />
+        <div className="absolute inset-2 sm:inset-4 md:inset-4 bg-black rounded-lg shadow-[inset_0_0_100px_rgba(0,255,0,0.1)] border border-green-500/20" />
 
         {/* Screen Flicker */}
         <motion.div
@@ -93,25 +93,25 @@ const MyHero: React.FC<MyHeroProps> = ({ id }) => {
       </div>
 
       {/* Terminal Window */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto p-8">
-        <div className="bg-gray-900/90 backdrop-blur-sm rounded-lg border border-green-500/30 shadow-2xl">
+      <div className="relative z-10 w-full max-w-6xl mx-auto p-2 sm:p-4 md:p-8">
+        <div className="bg-gray-900/90 backdrop-blur-sm rounded-lg border border-green-500/30 shadow-2xl max-h-[90dvh] sm:max-h-[85dvh] lg:max-h-[85dvh] overflow-hidden">
           {/* Terminal Header */}
-          <div className="flex items-center px-4 py-3 bg-gray-800/80 rounded-t-lg border-b border-green-500/20">
+          <div className="flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/80 rounded-t-lg border-b border-green-500/20">
             <div className="flex space-x-2">
-              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
             </div>
             <div className="flex-1 text-center">
-              <span className="text-green-400 text-sm font-mono flex items-center justify-center gap-2">
-                <Terminal className="w-4 h-4" />
+              <span className="text-green-400 text-xs sm:text-sm font-mono flex items-center justify-center gap-2">
+                <Terminal className="w-3 h-3 sm:w-4 sm:h-4" />
                 mikael@portfolio:~
               </span>
             </div>
           </div>
 
           {/* Terminal Content */}
-          <div className="p-6 font-mono text-green-400 space-y-4">
+          <div className="p-3 sm:p-4 md:p-6 font-mono text-green-400 space-y-2 sm:space-y-3 md:space-y-4 max-h-[80dvh] sm:max-h-[75dvh] lg:max-h-[75dvh] overflow-y-auto text-xs sm:text-sm">
             {/* Boot Sequence */}
             {isBooting ? (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-3">
@@ -326,7 +326,7 @@ const MyHero: React.FC<MyHeroProps> = ({ id }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.0 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <motion.button
             onClick={scrollToContent}

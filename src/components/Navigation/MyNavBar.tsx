@@ -21,7 +21,7 @@ const MyNavBar: React.FC<MyNavBarProps> = ({ navItems }) => {
   return (
     <>
       {/* Desktop navigation - top */}
-      <nav className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <nav className="hidden lg:block fixed top-0 left-0 right-0 z-[60] bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center h-16">
             <div className="flex space-x-8">
@@ -44,7 +44,7 @@ const MyNavBar: React.FC<MyNavBarProps> = ({ navItems }) => {
       </nav>
 
       {/* Mobile navigation - bottom */}
-      <nav className="lg:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-background/95 backdrop-blur-sm border border-border rounded-full px-6 py-3 shadow-lg">
+      <nav className="lg:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-[60] bg-background/95 backdrop-blur-sm border border-border rounded-full px-6 py-3 shadow-lg">
         <div className="flex items-center space-x-6">
           {navItems.map((item: TNavItem, index: number) => {
             const Icon = getNavIcon(item.name)
