@@ -1,7 +1,7 @@
-import { TSocialSidebar } from "../../types/TSocialSidebar";
+import { TSocialSidebar } from "../../types/TSocialSidebar"
 
 interface SocialComponentProps {
-  sidebarItem: TSocialSidebar;
+  sidebarItem: TSocialSidebar
 }
 
 /**
@@ -12,15 +12,13 @@ interface SocialComponentProps {
  * @param {React.ReactNode} props.children - The content to be rendered inside the anchor tag.
  * @return {JSX.Element} The rendered social component.
  */
-const SocialComponent: React.FC<
-  SocialComponentProps & React.HTMLProps<HTMLAnchorElement>
-> = ({
+const SocialComponent: React.FC<SocialComponentProps & React.HTMLProps<HTMLAnchorElement>> = ({
   sidebarItem,
   children,
-}: SocialComponentProps & React.HTMLProps<HTMLAnchorElement>): JSX.Element => (
+}: SocialComponentProps & React.HTMLProps<HTMLAnchorElement>) => (
   <a href={sidebarItem.href} className="m-2 p-2 rounded block ">
     {children}
   </a>
-);
+)
 
-export default SocialComponent;
+export default SocialComponent

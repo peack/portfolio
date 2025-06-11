@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-magical: var(--magical);
+  --color-magical-foreground: var(--magical-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* NRFW Game Theme - Based on the game's color palette */
+:root {
+  --radius: 0.5rem;
+
+  /* Main colors */
+  --background: #0f0f0f;
+  --foreground: #f2f2f2;
+
+  /* Card and container colors */
+  --card: #1a1a1a;
+  --card-foreground: #f2f2f2;
+
+  /* Popover colors */
+  --popover: #1a1a1a;
+  --popover-foreground: #f2f2f2;
+
+  /* Primary colors (amber/gold from game) */
+  --primary: #ffcd39;
+  --primary-foreground: #121212;
+
+  /* Secondary colors (red tones from game) */
+  --secondary: #8e2a20;
+  --secondary-foreground: #f2f2f2;
+
+  /* Muted colors */
+  --muted: #2a2a2a;
+  --muted-foreground: #a0a0a0;
+
+  /* Accent colors (darker gold) */
+  --accent: #be9b30;
+  --accent-foreground: #121212;
+
+  /* Destructive colors (plague purple) */
+  --destructive: #a945b7;
+  --destructive-foreground: #f2f2f2;
+
+  /* Magical colors (blue magic hue) */
+  --magical: #3b82f6;
+  --magical-foreground: #ffffff;
+
+  /* Downside colors (red tones) */
+  --downside: #dc2626; /* Bright red */
+  --downside-foreground: #f2f2f2;
+
+  /* Border and input colors */
+  --border: #333333;
+  --input: #333333;
+  --ring: #ffcd39;
+
+  /* Chart colors */
+  --chart-1: #ffcd39;
+  --chart-2: #dc4949;
+  --chart-3: #a945b7;
+  --chart-4: #c7902b;
+  --chart-5: #8e2a20;
+  --chart-6: #3b82f6; /* Added magical blue to charts */
+
+  /* Sidebar colors */
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #f2f2f2;
+  --sidebar-primary: #ffcd39;
+  --sidebar-primary-foreground: #121212;
+  --sidebar-accent: #333333;
+  --sidebar-accent-foreground: #f2f2f2;
+  --sidebar-border: #333333;
+  --sidebar-ring: #ffcd39;
+}
+
+/* Dark mode is default for this app */
+.dark {
+  --background: #0f0f0f;
+  --foreground: #f2f2f2;
+  --card: #1a1a1a;
+  --card-foreground: #f2f2f2;
+  --popover: #1a1a1a;
+  --popover-foreground: #f2f2f2;
+  --primary: #ffcd39;
+  --primary-foreground: #121212;
+  --secondary: #8e2a20;
+  --secondary-foreground: #f2f2f2;
+  --muted: #2a2a2a;
+  --muted-foreground: #a0a0a0;
+  --accent: #be9b30;
+  --accent-foreground: #121212;
+  --destructive: #a945b7;
+  --destructive-foreground: #f2f2f2;
+  --magical: #3b82f6; /* Bright blue */
+  --magical-foreground: #ffffff;
+  --border: #333333;
+  --input: #333333;
+  --ring: #ffcd39;
+  --chart-1: #ffcd39;
+  --chart-2: #dc4949;
+  --chart-3: #a945b7;
+  --chart-4: #c7902b;
+  --chart-5: #8e2a20;
+  --chart-6: #3b82f6; /* Added magical blue to charts */
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #f2f2f2;
+  --sidebar-primary: #ffcd39;
+  --sidebar-primary-foreground: #121212;
+  --sidebar-accent: #333333;
+  --sidebar-accent-foreground: #f2f2f2;
+  --sidebar-border: #333333;
+  --sidebar-ring: #ffcd39;
+
+  /* Update downside colors for dark mode */
+  --downside: #dc2626;
+  --downside-foreground: #f2f2f2;
+}

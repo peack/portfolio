@@ -1,18 +1,13 @@
-import React from "react";
-import { TExperience } from "../../types/TExperience";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import React from "react"
+import type { TExperience } from "../../types/TExperience"
 
 interface ExperienceProps {
-  experience: TExperience;
-  isOpen: boolean;
-  toggleOpen: (id: string) => void;
+  experience: TExperience
+  isOpen: boolean
+  toggleOpen: (id: string) => void
 }
 
-const ExperienceCard: React.FC<ExperienceProps> = ({
-  experience,
-  isOpen,
-  toggleOpen,
-}) => {
+const ExperienceCard: React.FC<ExperienceProps> = ({ experience, isOpen, toggleOpen }) => {
   return (
     <div
       style={{ whiteSpace: "pre-line" }}
@@ -23,11 +18,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
         onClick={() => toggleOpen(experience.id)}
       >
         {experience.title}
-        <div
-          className={`${isOpen ? "rotate-180" : ""} transition-transform duration-300`}
-        >
-          <ExpandMoreIcon />
-        </div>
+        <div className={`${isOpen ? "rotate-180" : ""} transition-transform duration-300`}>{">"}</div>
       </div>
       <div className="flex flex-col md:flex-row item-center">
         {isOpen && (
@@ -60,7 +51,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ExperienceCard;
+export default ExperienceCard
