@@ -22,7 +22,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ experience, isOpen, toggleO
       </div>
       <div className="flex flex-col md:flex-row item-center">
         {isOpen && (
-          <div className="flex md:flex-col items-start flex-row md:col-span-2 justify-center mb-2 md:justify-evenly flex-shrink-0 references-icons pr-2">
+          <div className="flex md:flex-col items-start flex-row md:col-span-2 justify-center mb-2 md:justify-evenly shrink-0 references-icons pr-2">
             {experience.references?.map((reference, index) => (
               <a key={index} href={reference?.href || ""} target="_blank">
                 <img

@@ -6,7 +6,7 @@ interface HomeProps {
 
 const Home: FC<HomeProps> = ({ children }) => {
   return (
-    <div className="main-content content-box flex-grow overflow-x-hidden overflow-y-auto">
+    <div className="main-content content-box grow overflow-x-hidden overflow-y-auto">
       {children}
     </div>
   );
