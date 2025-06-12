@@ -1,15 +1,23 @@
 import React from "react"
 import { Mail, Send, User } from "lucide-react"
+import { useTheme } from "../../contexts/ThemeContext"
 import CRTBackground from "../ui/crt-background"
 import TerminalWindow from "../ui/terminal-window"
 import ContactForm from "./ContactForm"
 import ContactInfo from "./ContactInfo"
+import { ContactClassic } from "./ContactClassic"
 
 interface ContactTerminalProps {
   id: string
 }
 
 export const ContactTerminal: React.FC<ContactTerminalProps> = ({ id }) => {
+  const { theme } = useTheme()
+
+  if (theme === "classic") {
+    return <ContactClassic id={id} />
+  }
+
   return (
     <CRTBackground id={id} showBackIndicator={true} scrollBackTarget="experience" scrollIndicatorDelay={2.0}>
       {/* Desktop Layout */}
