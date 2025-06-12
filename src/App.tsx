@@ -1,9 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { useEffect, useState } from "react"
 import Home from "./components/Home"
 import HomeWrapper from "./components/HomeWrapper"
 import ExperienceWrapper from "./components/Experience/ExperienceWrapper"
-import MyNavBar from "./components/Navigation/MyNavBar"
 import IntroductionWrapper from "./components/Introduction/IntroductionWrapper"
 import ContactWrapper from "./components/Contact/ContactWrapper"
 import SkillWrapper from "./components/Skills/SkillWrapper"
