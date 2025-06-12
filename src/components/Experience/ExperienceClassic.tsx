@@ -160,7 +160,7 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
           transition={{ duration: 0.8, delay: 1.0 }}
           viewport={{ once: true }}
         >
-          <NavigationArrow 
+          <NavigationArrow
             icon={ArrowDown}
             onClick={() => scrollToSection("contact")}
             className="text-gray-600 hover:text-blue-600"
@@ -174,7 +174,7 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
           transition={{ duration: 0.8, delay: 1.2 }}
           viewport={{ once: true }}
         >
-          <NavigationArrow 
+          <NavigationArrow
             icon={ArrowUp}
             onClick={() => scrollToSection("skills")}
             className="text-gray-600 hover:text-blue-600"

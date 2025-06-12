@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { User, ArrowDown, ArrowUp } from "lucide-react"
+import { ArrowDown, ArrowUp, User } from "lucide-react"
+import NavigationArrow from "../ui/NavigationArrow"
 import { Button } from "@/components/ui/button"
 import { scrollToSection } from "../../utils/navigation"
 import introData from "../../data/intro.json"
@@ -149,37 +150,31 @@ const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
 
       {/* Navigation indicators */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.0 }}
         viewport={{ once: true }}
       >
-        <Button
+        <NavigationArrow
+          icon={ArrowDown}
           onClick={() => scrollToSection("skills")}
-          variant="outline"
-          size="icon"
-          className="text-gray-600 hover:text-blue-600 transition-colors duration-300 w-12 h-12"
-        >
-          <ArrowDown size={32} className="animate-bounce" />
-        </Button>
+          className="text-gray-600 hover:text-blue-600"
+        />
       </motion.div>
 
       <motion.div
-        className="absolute top-8 left-1/2 transform -translate-x-1/2"
+        className="absolute top-8 left-1/2 transform -translate-x-1/2 z-50"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.2 }}
         viewport={{ once: true }}
       >
-        <Button
+        <NavigationArrow
+          icon={ArrowUp}
           onClick={() => scrollToSection("home")}
-          variant="outline"
-          size="icon"
-          className="text-gray-600 hover:text-blue-600 transition-colors duration-300 w-12 h-12"
-        >
-          <ArrowUp size={32} className="animate-bounce" />
-        </Button>
+          className="text-gray-600 hover:text-blue-600"
+        />
       </motion.div>
     </section>
   )
