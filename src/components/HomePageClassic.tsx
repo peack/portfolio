@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 import { ArrowDown, Github, Linkedin, Mail, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import NavigationArrow from "./ui/NavigationArrow"
 import { scrollToSection } from "../utils/navigation"
 import { useTheme } from "../contexts/ThemeContext"
+import { useTypewriter } from "../hooks/useTypewriter"
+import { useCursor } from "../hooks/useCursor"
 import socialData from "../data/socialData.json"
 
 interface HomePageClassicProps {
@@ -13,52 +15,21 @@ interface HomePageClassicProps {
 
 const HomePageClassic: React.FC<HomePageClassicProps> = ({ id }) => {
   const { theme, toggleTheme } = useTheme()
-  const [displayedText, setDisplayedText] = useState("")
-  const [showCursor, setShowCursor] = useState(true)
-  const [currentPhase, setCurrentPhase] = useState(0)
 
   // Get social links from data
   const githubLink = socialData.socials.find((social) => social.name === "GitHub")?.href || "#"
   const linkedinLink = socialData.socials.find((social) => social.name === "LinkedIn")?.href || "#"
 
-  const phrases = ["A Full Stack Developer", "A Software Engineer", "A Problem Solver."]
-
-  useEffect(() => {
-    if (currentPhase >= phrases.length) return
-
-    const currentPhrase = phrases[currentPhase]
-    const isTyping = displayedText.length < currentPhrase.length
-    const shouldDelete =
-      displayedText.length > 0 && displayedText === currentPhrase && currentPhase < phrases.length - 1
-
-    let timeout: NodeJS.Timeout
-
-    if (isTyping) {
-      // Typing
-      timeout = setTimeout(
-        () => {
-          setDisplayedText(currentPhrase.slice(0, displayedText.length + 1))
-        },
-        100 + Math.random() * 50
-      )
-    } else if (shouldDelete) {
-      // Wait before deleting
-      timeout = setTimeout(() => {
-        setDisplayedText("")
-        setCurrentPhase((prev) => prev + 1)
-      }, 1500)
-    }
-
-    return () => clearTimeout(timeout)
-  }, [displayedText, currentPhase])
-
-  // Cursor blink effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowCursor((prev) => !prev)
-    }, 500)
-    return () => clearInterval(interval)
-  }, [])
+  const phrases = ['"A Full Stack Developer"', '"A Software Engineer"', '"A Problem Solver."']
+  
+  const displayedText = useTypewriter({
+    phrases,
+    typingSpeed: 50,
+    deletingSpeed: 30,
+    pauseTime: 250
+  })
+  
+  const showCursor = useCursor(500)
 
   return (
     <section id={id} className="dark h-dvh bg-hero-dark flex items-center justify-center relative">
