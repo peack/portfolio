@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUp } from "lucide-react"
 import skillsData from "../../data/skillsData.json"
 import SkillCarousel from "./SkillCarousel"
 import SkillsSeparator from "./SkillsSeparator"
+import GradientBackground from "../ui/GradientBackground"
 
 interface SkillsClassicProps {
   id: string
@@ -13,11 +14,7 @@ const SkillsClassic: React.FC<SkillsClassicProps> = ({ id }) => {
   return (
     <section id={id} className="min-h-dvh bg-gray-950 py-16 sm:py-20 relative overflow-hidden flex items-center">
       {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
-      </div>
+      <GradientBackground variant="dark" />
 
       <div className="w-full relative z-10">
         {/* Header */}

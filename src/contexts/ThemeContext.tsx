@@ -15,7 +15,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>("terminal")
+  const [theme, setTheme] = useState<Theme>("classic")
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "terminal" ? "classic" : "terminal"))

@@ -1,11 +1,27 @@
 {
   "experiences": [
     {
-      "title": "Web Developer - TheNaap",
-      "date_start": "Prsnt",
+      "title": "Web Developer - NRFW Enchant Planner",
+      "date_start": "Present",
       "date_end": "",
-      "description":"",
+      "description": "Built and shared a comprehensive web application for the NRFW Enchant Planner, a tool designed to help users plan and manage and share their enchanting for the game. The application features a user-friendly and mobile interface.",
+      "id": "1212",
+      "techStack": ["React", "TypeScript", "Node.js"],
+      "references": [
+        {
+          "name": "NRFW Enchant Planner",
+          "iconLink": "/The_Breach_Logo_png.png",
+          "href": "https://nrfw.mikega.xyz/"
+        }
+      ]
+    },
+    {
+      "title": "Web Developer - TheNaap",
+      "date_start": "Present",
+      "date_end": "",
+      "description": "Currently developing TheNaap, a comprehensive baby tracking application that helps parents monitor their child's development milestones, feeding schedules, and health records. Built with modern web technologies to provide a seamless user experience across all devices.",
       "id": "123",
+      "techStack": ["React", "TypeScript", "Node.js", "MongoDB"],
       "references": [
         {
           "name": "The NaApp",
@@ -17,33 +33,35 @@
     {
       "title": "Web Developer",
       "date_start": "10/23",
-      "date_end": "Prsnt",
+      "date_end": "Present",
       "description": "As a freelance web developer, I have honed my React skills through a diverse array of projects, delivering high-quality, responsive web applications for clients across different industries. By tackling complex challenges and implementing best practices, I have continuously refined my expertise in React. My work has included developing dynamic user interfaces, optimizing performance, and ensuring seamless integration with backend systems. This hands-on experience has not only deepened my proficiency in React but also enhanced my ability to deliver robust and scalable web solutions tailored to meet client needs.",
       "id": "0",
-      "references": [
-      ]
+      "techStack": ["React", "TypeScript", "Next.js", "Tailwind CSS", "Node.js"],
+      "references": []
     },
     {
-      "title": "IOS Engineer: Consultant",
+      "title": "iOS Engineer: Consultant",
       "date_start": "10/21",
       "date_end": "10/23",
       "description": "I have successfully led and contributed to numerous projects for a diverse range of clients, utilizing my expertise in iOS native and web technologies. By collaborating closely with cross-functional teams, I have designed, developed, and deployed scalable applications that meet and exceed client requirements. Through the implementation of industry best practices in software engineering and strict adherence to Agile methodologies, I have consistently ensured the timely and efficient delivery of high-quality projects",
       "id": "1",
-      "references": [
-      ]
+      "techStack": ["Swift", "SwiftUI", "UIKit", "Xcode", "Git"],
+      "references": []
     },
     {
-      "title": "IOS Engineer",
+      "title": "iOS Engineer",
       "date_start": "02/22",
       "date_end": "08/23",
-      "description": "I contributed to enhancing an aging architecture within a dynamic team, significantly improving critical test coverage. I implemented a user home dashboard and developed bi-directional communication contracts for seamless web-native interaction, driving up user engagement. Additionally, I updated outdated designs and features, enhancing the UX and reducing support costs.\n\n In collaboration with web and Android teams, I designed and developed the Flex Client app replacement. I led the iOS development efforts from initial implementation to App Store release, overcoming technical uncertainties and design complexities, such as integrating web views and ensuring compliance with App Store requirements.",
+      "description": "I contributed to enhancing an aging architecture within a dynamic team, significantly improving critical test coverage. I implemented a user home dashboard and developed bi-directional communication contracts for seamless web-native interaction, driving up user engagement. Additionally, I updated outdated designs and features, enhancing the UX and reducing support costs.\n\nIn collaboration with web and Android teams, I designed and developed the Flex Client app replacement. I led the iOS development efforts from initial implementation to App Store release, overcoming technical uncertainties and design complexities, such as integrating web views and ensuring compliance with App Store requirements.",
       "id": "2",
+      "techStack": ["Swift", "SwiftUI", "UIKit", "WebKit", "XCTest", "CI/CD"],
       "references": [
         {
           "name": "Indeed Flex - Job Search",
           "iconLink": "/indeedflex.png",
           "href": "https://apps.apple.com/us/app/indeed-flex-job-search/id1013812731"
-        },{
+        },
+        {
           "name": "Flex Client",
           "iconLink": "/flexclient.png",
           "href": "https://apps.apple.com/gb/app/flex-client/id1633022875"
@@ -51,11 +69,12 @@
       ]
     },
     {
-      "title": "IOS Engineer ",
+      "title": "iOS Engineer",
       "date_start": "10/21",
       "date_end": "02/22",
-      "description": "For the Courtside 1891 app, I collaborated with an OS lead to pioneer the development of a comprehensive application, successfully meeting demanding delivery timelines. Utilizing SwiftUI during its early stages, I embraced agile development practices and addressed challenges creatively.\n Additionally, I leveraged Kotlin Multiplatform Mobile (KMM) to integrate with the Pulselive CMS API.",
+      "description": "For the Courtside 1891 app, I collaborated with an OS lead to pioneer the development of a comprehensive application, successfully meeting demanding delivery timelines. Utilizing SwiftUI during its early stages, I embraced agile development practices and addressed challenges creatively.\nAdditionally, I leveraged Kotlin Multiplatform Mobile (KMM) to integrate with the Pulselive CMS API.",
       "id": "3",
+      "techStack": ["SwiftUI", "Swift", "Kotlin Multiplatform", "REST APIs", "Agile"],
       "references": [
         {
           "name": "Courtside 1891",
@@ -63,15 +82,17 @@
           "href": "https://apps.apple.com/us/app/courtside-1891/id1606716397"
         }
       ]
-    },{
-"title": "IOS Engineer",
+    },
+    {
+      "title": "iOS Engineer",
       "date_start": "10/21",
       "date_end": "02/22",
-      "description": "Contributed to the final development stages of the Qatar World Cup 2022 iOS App, ensuring seamless visa applications and providing users with interactive access to match details, tourist attractions, and cultural information through an engaging map interface. \nAdditionally, implemented right-to-left support and localization features to enhance accessibility for a diverse user base.",
+      "description": "Contributed to the final development stages of the Qatar World Cup 2022 iOS App, ensuring seamless visa applications and providing users with interactive access to match details, tourist attractions, and cultural information through an engaging map interface.\nAdditionally, implemented right-to-left support and localization features to enhance accessibility for a diverse user base.",
       "id": "4",
+      "techStack": ["Swift", "UIKit", "MapKit", "Localization", "RTL Support"],
       "references": [
         {
-          "name": "Hayaa Qatar ",
+          "name": "Hayya Qatar",
           "iconLink": "/hayya.png",
           "href": "https://apps.apple.com/us/app/hayya-to-qatar/id1593845586"
         }
