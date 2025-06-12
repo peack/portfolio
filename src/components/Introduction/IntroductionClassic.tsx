@@ -67,7 +67,7 @@ const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
                 viewport={{ once: true }}
                 className="relative flex justify-center"
               >
-                <Polaroid src={meTall} alt="Mikael Galliot" caption="Mikael Galliot" size="md" />
+                <Polaroid src={meTall} alt="Mike" caption="Mike" size="md" />
 
                 {/* Decorative elements */}
                 <div className="absolute -top-8 -left-8 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>

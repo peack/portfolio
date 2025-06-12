@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { ArrowDown, Github, Linkedin, Mail, Palette, Terminal } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import NavigationArrow from "./ui/NavigationArrow"
 import { scrollToSection } from "../utils/navigation"
@@ -13,10 +13,52 @@ interface HomePageClassicProps {
 
 const HomePageClassic: React.FC<HomePageClassicProps> = ({ id }) => {
   const { theme, toggleTheme } = useTheme()
+  const [displayedText, setDisplayedText] = useState("")
+  const [showCursor, setShowCursor] = useState(true)
+  const [currentPhase, setCurrentPhase] = useState(0)
 
   // Get social links from data
   const githubLink = socialData.socials.find((social) => social.name === "GitHub")?.href || "#"
   const linkedinLink = socialData.socials.find((social) => social.name === "LinkedIn")?.href || "#"
+
+  const phrases = ["A Full Stack Developer", "A Software Engineer", "A Problem Solver."]
+
+  useEffect(() => {
+    if (currentPhase >= phrases.length) return
+
+    const currentPhrase = phrases[currentPhase]
+    const isTyping = displayedText.length < currentPhrase.length
+    const shouldDelete =
+      displayedText.length > 0 && displayedText === currentPhrase && currentPhase < phrases.length - 1
+
+    let timeout: NodeJS.Timeout
+
+    if (isTyping) {
+      // Typing
+      timeout = setTimeout(
+        () => {
+          setDisplayedText(currentPhrase.slice(0, displayedText.length + 1))
+        },
+        100 + Math.random() * 50
+      )
+    } else if (shouldDelete) {
+      // Wait before deleting
+      timeout = setTimeout(() => {
+        setDisplayedText("")
+        setCurrentPhase((prev) => prev + 1)
+      }, 1500)
+    }
+
+    return () => clearTimeout(timeout)
+  }, [displayedText, currentPhase])
+
+  // Cursor blink effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCursor((prev) => !prev)
+    }, 500)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section id={id} className="dark h-dvh bg-hero-dark flex items-center justify-center relative">
@@ -38,12 +80,15 @@ const HomePageClassic: React.FC<HomePageClassicProps> = ({ id }) => {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed"
+            className="text-3xl md:text-5xl text-gray-300 mb-8 leading-relaxed min-h-[3.5rem] md:min-h-[4rem] flex items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Full Stack Developer & Software Engineer
+            {displayedText}
+            <span className={`ml-2 text-blue-400 ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}>
+              |
+            </span>
           </motion.p>
 
           <motion.p
@@ -76,7 +121,7 @@ const HomePageClassic: React.FC<HomePageClassicProps> = ({ id }) => {
             </Button>
             <Button onClick={toggleTheme} variant="gradient-terminal" size="lg" className="font-mono">
               <Terminal className="mr-2 h-5 w-5" />
-              ./terminal theme
+              ./terminal_theme-wip
             </Button>
           </motion.div>
 
