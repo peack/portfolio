@@ -18,10 +18,7 @@ const HomePageClassic: React.FC<HomePageClassicProps> = ({ id }) => {
   const linkedinLink = socialData.socials.find((social) => social.name === "LinkedIn")?.href || "#"
 
   return (
-    <section
-      id={id}
-      className="dark h-dvh bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center relative"
-    >
+    <section id={id} className="dark h-dvh bg-hero-dark flex items-center justify-center relative">
       <div className="container mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -64,27 +61,19 @@ const HomePageClassic: React.FC<HomePageClassicProps> = ({ id }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-3 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-              size="lg"
-            >
+            <Button onClick={() => scrollToSection("contact")} variant="gradient-primary" size="lg">
               <Mail className="mr-2 h-5 w-5" />
               Get In Touch
             </Button>
             <Button
               onClick={() => scrollToSection("experience")}
               variant="outline"
-              className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-gray-500 px-8 py-3 font-semibold transform hover:-translate-y-1 transition-all duration-300"
               size="lg"
+              className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-gray-500 transform hover:-translate-y-1 transition-all duration-300"
             >
               View My Work
             </Button>
-            <Button
-              onClick={toggleTheme}
-              className="bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 px-8 py-3 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 font-mono"
-              size="lg"
-            >
+            <Button onClick={toggleTheme} variant="gradient-terminal" size="lg" className="font-mono">
               <Terminal className="mr-2 h-5 w-5" />
               ./terminal theme
             </Button>

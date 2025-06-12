@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { ArrowDown, ArrowUp } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { scrollToSection } from "../../utils/navigation"
 import skillsData from "../../data/skillsData.json"
 import SkillCarousel from "./SkillCarousel"
@@ -68,12 +69,14 @@ const SkillsClassic: React.FC<SkillsClassicProps> = ({ id }) => {
         transition={{ duration: 0.8, delay: 1.0 }}
         viewport={{ once: true }}
       >
-        <button
+        <Button
           onClick={() => scrollToSection("experience")}
-          className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+          variant="ghost"
+          size="icon"
+          className="text-gray-400 hover:text-blue-400 transition-colors duration-300 w-12 h-12"
         >
           <ArrowDown size={28} className="sm:w-8 sm:h-8 animate-bounce" />
-        </button>
+        </Button>
       </motion.div>
 
       <motion.div
@@ -83,12 +86,14 @@ const SkillsClassic: React.FC<SkillsClassicProps> = ({ id }) => {
         transition={{ duration: 0.8, delay: 1.2 }}
         viewport={{ once: true }}
       >
-        <button
+        <Button
           onClick={() => scrollToSection("about")}
-          className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+          variant="ghost"
+          size="icon"
+          className="text-gray-400 hover:text-blue-400 transition-colors duration-300 w-12 h-12"
         >
           <ArrowUp size={28} className="sm:w-8 sm:h-8 animate-bounce" />
-        </button>
+        </Button>
       </motion.div>
     </section>
   )

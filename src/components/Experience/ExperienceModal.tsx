@@ -1,6 +1,7 @@
 import React from "react"
 import { ExternalLink, Calendar } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Badge } from "@/components/ui/badge"
 import type { TExperience } from "../../types/TExperience"
 
 interface ExperienceModalProps {
@@ -59,11 +60,24 @@ const ExperienceModal: React.FC<ExperienceModalProps> = ({ experience, isOpen, o
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Technologies Used</h3>
                   <div className="flex flex-wrap gap-2">
-                    {experience.techStack.map((tech, index) => (
-                      <span key={index} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium">
-                        {tech}
-                      </span>
-                    ))}
+                    {experience.techStack.map((tech, index) => {
+                      // Map technologies to specific badge variants
+                      const getBadgeVariant = (techName: string) => {
+                        const lowerTech = techName.toLowerCase()
+                        if (lowerTech.includes("react")) return "react"
+                        if (lowerTech.includes("typescript")) return "typescript"
+                        if (lowerTech.includes("swift")) return "swift"
+                        if (lowerTech.includes("node")) return "node"
+                        if (lowerTech.includes("javascript")) return "javascript"
+                        return "tech"
+                      }
+
+                      return (
+                        <Badge key={index} variant={getBadgeVariant(tech)} className="text-sm">
+                          {tech}
+                        </Badge>
+                      )
+                    })}
                   </div>
                 </div>
               )}

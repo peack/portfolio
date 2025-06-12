@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import GradientBackground from "../ui/GradientBackground"
 import socialData from "../../data/socialData.json"
+import NavigationArrow from "../ui/NavigationArrow"
 import { scrollToSection } from "../../utils/navigation"
 
 interface ContactClassicProps {
@@ -235,12 +236,7 @@ export const ContactClassic: React.FC<ContactClassicProps> = ({ id }) => {
         transition={{ duration: 0.8, delay: 1.0 }}
         viewport={{ once: true }}
       >
-        <button
-          onClick={() => scrollToSection("experience")}
-          className="text-gray-400 hover:text-blue-400 transition-colors duration-300 cursor-pointer"
-        >
-          <ArrowUp size={28} className="sm:w-8 sm:h-8 animate-bounce" />
-        </button>
+        <NavigationArrow icon={ArrowUp} onClick={() => scrollToSection("experience")} />
       </motion.div>
     </section>
   )

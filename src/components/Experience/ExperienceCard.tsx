@@ -68,13 +68,26 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index, onVi
           {experience.techStack && experience.techStack.length > 0 && (
             <div className="mb-3 flex-shrink-0">
               <div className="flex flex-wrap gap-1">
-                {experience.techStack.slice(0, 3).map((tech, techIndex) => (
-                  <Badge key={techIndex} variant="secondary" className="text-xs">
-                    {tech}
-                  </Badge>
-                ))}
+                {experience.techStack.slice(0, 3).map((tech, techIndex) => {
+                  // Map technologies to specific badge variants
+                  const getBadgeVariant = (techName: string) => {
+                    const lowerTech = techName.toLowerCase()
+                    if (lowerTech.includes("react")) return "react"
+                    if (lowerTech.includes("typescript")) return "typescript"
+                    if (lowerTech.includes("swift")) return "swift"
+                    if (lowerTech.includes("node")) return "node"
+                    if (lowerTech.includes("javascript")) return "javascript"
+                    return "tech"
+                  }
+
+                  return (
+                    <Badge key={techIndex} variant={getBadgeVariant(tech)} className="text-xs">
+                      {tech}
+                    </Badge>
+                  )
+                })}
                 {experience.techStack.length > 3 && (
-                  <Badge variant="outline" className="text-xs">
+                  <Badge variant="outline" className="text-xs border-slate-300 text-slate-600">
                     +{experience.techStack.length - 3} more
                   </Badge>
                 )}
@@ -91,7 +104,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index, onVi
 
             {/* Quick Reference Link */}
             {experience.references && experience.references.length > 0 && experience.references[0].href && (
-              <Button asChild size="sm" className="flex-1">
+              <Button asChild size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700 text-white">
                 <a href={experience.references[0].href} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-4 w-4" />
                   View
