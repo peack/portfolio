@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { ChevronDown, Github, Linkedin, Mail, Terminal } from "lucide-react"
+import CRTBackground from "./ui/crt-background"
 
 interface MyHeroProps {
   id: string
@@ -64,36 +65,21 @@ const MyHero: React.FC<MyHeroProps> = ({ id }) => {
   }, [])
 
   const scrollToContent = () => {
-    const element = document.getElementById("content")
+    const element = document.getElementById("about")
     element?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <section id={id} className="relative h-dvh flex items-center justify-center overflow-hidden bg-black">
-      {/* CRT Screen Effect */}
-      <div className="absolute inset-0 bg-black">
-        {/* Scanlines */}
-        <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 0, 0.03) 2px, rgba(0, 255, 0, 0.03) 4px)",
-          }}
-        />
-
-        {/* CRT Curvature & Glow */}
-        <div className="absolute inset-2 sm:inset-4 md:inset-4 bg-black rounded-lg shadow-[inset_0_0_100px_rgba(0,255,0,0.1)] border border-green-500/20" />
-
-        {/* Screen Flicker */}
-        <motion.div
-          className="absolute inset-0 bg-green-500/5"
-          animate={{ opacity: [0.05, 0.02, 0.05] }}
-          transition={{ duration: 0.1, repeat: Infinity, repeatType: "reverse" }}
-        />
-      </div>
-
+    <CRTBackground
+      id={id}
+      isHero={true}
+      glowIntensity="hero"
+      showScrollIndicator={currentCommand >= 4}
+      scrollTarget="about"
+      scrollIndicatorDelay={1.0}
+    >
       {/* Terminal Window */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto p-2 sm:p-4 md:p-8">
+      <div className="w-full max-w-6xl mx-auto p-2 sm:p-4 md:p-8">
         <div className="bg-gray-900/90 backdrop-blur-sm rounded-lg border border-green-500/30 shadow-2xl max-h-[90dvh] sm:max-h-[85dvh] lg:max-h-[85dvh] overflow-hidden">
           {/* Terminal Header */}
           <div className="flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/80 rounded-t-lg border-b border-green-500/20">
@@ -319,27 +305,7 @@ const MyHero: React.FC<MyHeroProps> = ({ id }) => {
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      {currentCommand >= 4 && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.button
-            onClick={scrollToContent}
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="p-2 text-green-400 hover:text-green-300 transition-colors"
-            aria-label="Scroll to content"
-          >
-            <ChevronDown className="w-6 h-6" />
-          </motion.button>
-        </motion.div>
-      )}
-    </section>
+    </CRTBackground>
   )
 }
 

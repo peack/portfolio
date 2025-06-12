@@ -4,6 +4,7 @@ import Home from "./components/Home"
 import ExperienceContainer from "./components/Experience/ExperienceContainer"
 import MyNavBar from "./components/Navigation/MyNavBar"
 import HomePage from "./components/HomePage"
+import Introduction from "./components/Introduction"
 import ContactContainer from "./components/Contact/ContactContainer"
 import SkillContainerGrid from "./components/Skills/SkillContainerGrid"
 import type { TNavItem } from "./types/TNavItem"
@@ -21,6 +22,7 @@ function App() {
       <div className="min-h-screen">
         <Home>
           <HomePage id="home" />
+          <Introduction />
           <SkillContainerGrid id="skills" />
           <ExperienceContainer experiences={experiences} id="experience" />
           <ContactContainer id="contact" />
