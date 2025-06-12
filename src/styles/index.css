@@ -248,6 +248,66 @@
   .floating-back-button-classic {
     @apply bg-white/90 border border-gray-300 text-gray-700 hover:bg-blue-50 hover:border-blue-400 shadow-lg;
   }
+
+  /* Mobile viewport optimizations */
+  .mobile-optimized {
+    /* Stable viewport height using CSS custom property */
+    --mobile-vh: calc(var(--stable-vh, 1vh) * 100);
+
+    /* Prevent layout shifts */
+    contain: layout style;
+
+    /* Optimize scrolling performance */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+
+    /* Prevent zoom on iOS */
+    touch-action: manipulation;
+  }
+
+  .mobile-content-wrapper {
+    /* Ensure content respects safe areas */
+    min-height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+
+    /* Prevent horizontal overflow */
+    overflow-x: hidden;
+
+    /* Optimize rendering */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .mobile-landscape {
+    /* Adjust for landscape mode */
+    --mobile-vh: calc(var(--stable-vh, 1vh) * 85);
+  }
+
+  .mobile-portrait {
+    /* Full height in portrait */
+    --mobile-vh: calc(var(--stable-vh, 1vh) * 100);
+  }
+
+  /* Enhanced smooth scrolling for mobile */
+  @media (max-width: 1023px) {
+    html {
+      /* Use custom property instead of dvh */
+      height: calc(var(--stable-vh, 1vh) * 100);
+      overflow-x: hidden;
+    }
+
+    body {
+      /* Prevent bounce scrolling on iOS */
+      overscroll-behavior: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Optimize scroll containers on mobile */
+    .scroll-smooth {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
 }
 
 @layer utilities {
@@ -281,5 +341,35 @@
     html {
       scroll-behavior: smooth;
     }
+  }
+
+  /* Mobile-safe height utilities */
+  .h-mobile-screen {
+    height: calc(var(--stable-vh, 1vh) * 100);
+  }
+
+  .min-h-mobile-screen {
+    min-height: calc(var(--stable-vh, 1vh) * 100);
+  }
+
+  .max-h-mobile-screen {
+    max-height: calc(var(--stable-vh, 1vh) * 100);
+  }
+
+  /* Safe area utilities */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
   }
 }

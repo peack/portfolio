@@ -1,7 +1,8 @@
 import React from "react"
 import { useTheme } from "../../contexts/ThemeContext"
-import { ContactTerminal } from "./ContactTerminal"
 import ContactClassic from "./ContactClassic"
+import MobileViewportWrapper from "../ui/MobileViewportWrapper"
+import { ContactTerminal } from "./ContactTerminal"
 
 interface ContactWrapperProps {
   id: string
@@ -10,7 +11,11 @@ interface ContactWrapperProps {
 const ContactWrapper: React.FC<ContactWrapperProps> = ({ id }) => {
   const { theme } = useTheme()
 
-  return theme === "terminal" ? <ContactTerminal id={id} /> : <ContactClassic id={id} />
+  return (
+    <MobileViewportWrapper id={id} mobileHeightMode="content" enableSmoothScroll={true} minHeight="100dvh">
+      {theme === "terminal" ? <ContactTerminal id={id} /> : <ContactClassic id={id} />}
+    </MobileViewportWrapper>
+  )
 }
 
 export default ContactWrapper

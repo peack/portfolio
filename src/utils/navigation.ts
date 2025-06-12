@@ -39,6 +39,47 @@ export const scrollToSectionSlow = (sectionId: string) => {
   }
 }
 
+// Enhanced mobile-friendly scroll function
+export const scrollToSectionMobile = (sectionId: string) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    const isMobile = window.innerWidth < 1024
+    const viewportHeight = window.visualViewport?.height || window.innerHeight
+
+    if (isMobile) {
+      // Calculate offset for mobile to ensure section is properly visible
+      const elementRect = element.getBoundingClientRect()
+      const offsetTop = window.pageYOffset + elementRect.top
+
+      // Adjust for mobile browser UI
+      const mobileOffset = viewportHeight * 0.05 // 5% offset for mobile UI
+
+      window.scrollTo({
+        top: Math.max(0, offsetTop - mobileOffset),
+        behavior: "smooth",
+      })
+    } else {
+      // Use existing desktop behavior
+      scrollToSectionSlow(sectionId)
+    }
+  }
+}
+
+// Auto-detect and use appropriate scroll method
+export const scrollToSectionAuto = (sectionId: string) => {
+  const isMobile = window.innerWidth < 1024
+
+  if (isMobile) {
+    scrollToSectionMobile(sectionId)
+  } else {
+    scrollToSectionSlow(sectionId)
+  }
+}
+
 export const createScrollHandler = (sectionId: string) => {
   return () => scrollToSectionSlow(sectionId)
+}
+
+export const createScrollHandlerAuto = (sectionId: string) => {
+  return () => scrollToSectionAuto(sectionId)
 }
