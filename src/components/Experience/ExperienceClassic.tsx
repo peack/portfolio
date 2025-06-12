@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowDown, ArrowUp, ChevronLeft, ChevronRight } from "lucide-react"
+import { scrollToSection } from "../../utils/navigation"
 import type { TExperience } from "../../types/TExperience"
 import ExperienceCard from "./ExperienceCard"
 import ExperienceModal from "./ExperienceModal"
@@ -130,9 +131,12 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
         transition={{ duration: 0.8, delay: 1.0 }}
         viewport={{ once: true }}
       >
-        <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+        >
           <ArrowDown size={28} className="sm:w-8 sm:h-8 animate-bounce" />
-        </a>
+        </button>
       </motion.div>
 
       <motion.div
@@ -142,9 +146,12 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
         transition={{ duration: 0.8, delay: 1.2 }}
         viewport={{ once: true }}
       >
-        <a href="#skills" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+        <button
+          onClick={() => scrollToSection("skills")}
+          className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+        >
           <ArrowUp size={28} className="sm:w-8 sm:h-8 animate-bounce" />
-        </a>
+        </button>
       </motion.div>
     </section>
   )

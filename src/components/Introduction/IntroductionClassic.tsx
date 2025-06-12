@@ -1,6 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { User, ArrowDown, ArrowUp } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { scrollToSection } from "../../utils/navigation"
 import introData from "../../data/intro.json"
 import meTall from "../../assets/me_wizard_2.jpg"
 import { Polaroid } from "../ui/Polaroid"
@@ -153,9 +155,14 @@ const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
         transition={{ duration: 0.8, delay: 1.0 }}
         viewport={{ once: true }}
       >
-        <a href="#skills" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+        <Button
+          onClick={() => scrollToSection("skills")}
+          variant="outline"
+          size="icon"
+          className="text-gray-600 hover:text-blue-600 transition-colors duration-300 w-12 h-12"
+        >
           <ArrowDown size={32} className="animate-bounce" />
-        </a>
+        </Button>
       </motion.div>
 
       <motion.div
@@ -165,9 +172,14 @@ const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
         transition={{ duration: 0.8, delay: 1.2 }}
         viewport={{ once: true }}
       >
-        <a href="#home" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+        <Button
+          onClick={() => scrollToSection("home")}
+          variant="outline"
+          size="icon"
+          className="text-gray-600 hover:text-blue-600 transition-colors duration-300 w-12 h-12"
+        >
           <ArrowUp size={32} className="animate-bounce" />
-        </a>
+        </Button>
       </motion.div>
     </section>
   )
