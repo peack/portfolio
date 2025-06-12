@@ -75,7 +75,7 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
           }}
         />
 
-        <div className="w-full relative z-10 flex-1 flex flex-col justify-center max-h-full pb-16">
+        <div className="w-full relative z-10 flex-1 flex flex-col justify-center max-h-full pb-16 pt-16">
           {/* Header */}
           <motion.div
             className="text-center mb-8 sm:mb-12 px-4"
@@ -96,10 +96,10 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
           </div>
 
           {/* Mobile/Tablet Layout - Fixed Size Pages */}
-          <div className="lg:hidden px-4 flex-1 flex flex-col justify-center">
-            <div className="max-w-2xl mx-auto w-full">
-              <div className="h-[45vh] flex flex-col">
-                <div className="flex-1 space-y-3 overflow-y-auto">
+          <div className="lg:hidden px-6 flex-1 flex flex-col justify-center">
+            <div className="max-w-xl mx-auto w-full">
+              <div className="h-[50vh] flex flex-col">
+                <div className="flex-1 space-y-2 overflow-y-auto">
                   {currentExperiences.map((experience, index) => (
                     <ExperienceCompactCard
                       key={experience.id}
@@ -115,7 +115,7 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
 
               {/* Pagination Controls */}
               {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-4 mt-6 mb-4">
+                <div className="flex items-center justify-center gap-4 mt-4 mb-2">
                   <button
                     onClick={prevPage}
                     disabled={currentPage === 0}

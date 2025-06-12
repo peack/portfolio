@@ -16,10 +16,10 @@ const ExperienceCompactCard: React.FC<ExperienceCompactCardProps> = ({ experienc
         onClick={() => onViewDetails(experience)}
         className="cursor-pointer hover:shadow-lg transition-all duration-200 group"
       >
-        <CardContent className="flex items-center gap-4 p-4">
+        <CardContent className="flex items-center gap-3 px-3">
           {/* Icon */}
           {experience.references && experience.references.length > 0 && experience.references[0].iconLink && (
-            <div className="w-12 h-12 rounded-lg overflow-hidden shadow-sm flex-shrink-0">
+            <div className="w-8 h-8 rounded-md overflow-hidden shadow-sm flex-shrink-0">
               <img
                 src={experience.references[0].iconLink}
                 alt={`${experience.references[0].name} icon`}
@@ -30,14 +30,14 @@ const ExperienceCompactCard: React.FC<ExperienceCompactCardProps> = ({ experienc
 
           {/* Content */}
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-gray-900 text-sm truncate mb-1">{experience.title}</h3>
+            <h3 className="font-semibold text-gray-900 text-xs truncate mb-0.5">{experience.title}</h3>
             <p className="text-xs text-gray-500 truncate">
               {experience.date_start} - {experience.date_end || "Present"}
             </p>
           </div>
 
           {/* Arrow */}
-          <ChevronRight size={16} className="text-gray-400 group-hover:text-gray-600 transition-colors flex-shrink-0" />
+          <ChevronRight size={14} className="text-gray-400 group-hover:text-gray-600 transition-colors flex-shrink-0" />
         </CardContent>
       </Card>
     </div>
