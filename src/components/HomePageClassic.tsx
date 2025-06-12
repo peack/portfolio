@@ -96,7 +96,7 @@ const HomePageClassic: React.FC<HomePageClassicProps> = ({ id }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <a href="#intro" className="text-gray-400 hover:text-white transition-colors duration-300">
+          <a href="#about" className="text-gray-400 hover:text-white transition-colors duration-300">
             <ArrowDown size={32} className="animate-bounce" />
           </a>
         </motion.div>

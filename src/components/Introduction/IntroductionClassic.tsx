@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { User, ArrowDown, ArrowUp } from "lucide-react"
 import introData from "../../data/intro.json"
 import meTall from "../../assets/me_wizard_2.jpg"
+import { Polaroid } from "../ui/Polaroid"
 
 interface IntroductionClassicProps {
   id: string
@@ -10,8 +11,35 @@ interface IntroductionClassicProps {
 
 const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
   return (
-    <section id={id} className="min-h-screen bg-gray-50 py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id={id} className="min-h-screen bg-gray-50 py-20 relative overflow-hidden">
+      {/* Background grid pattern */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Main grid pattern */}
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+            `,
+            backgroundSize: "30px 30px",
+          }}
+        />
+
+        {/* Accent dots at grid intersections */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.8) 1px, transparent 0)",
+            backgroundSize: "30px 30px",
+          }}
+        />
+
+        {/* Gradient overlays */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50/70 via-transparent to-purple-50/70"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <motion.div
@@ -27,26 +55,20 @@ const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
 
           {/* Desktop Layout */}
           <div className="hidden lg:block">
-            <div className="grid lg:grid-cols-3 gap-16 items-start">
+            <div className="grid lg:grid-cols-3 gap-16 items-center">
               {/* Image Section - 1/3 width */}
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="relative"
+                className="relative flex justify-center"
               >
-                <div className="relative group">
-                  <img
-                    src={meTall}
-                    alt="Mikael Galliot"
-                    className="rounded-2xl object-cover w-full shadow-2xl group-hover:shadow-3xl transition-shadow duration-300"
-                  />
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
+                <Polaroid src={meTall} alt="Mikael Galliot" caption="Mikael Galliot" size="md" />
+
                 {/* Decorative elements */}
-                <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
+                <div className="absolute -top-8 -left-8 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
               </motion.div>
 
               {/* Text Section - 2/3 width */}
@@ -89,11 +111,7 @@ const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
               viewport={{ once: true }}
               className="flex justify-center"
             >
-              <div className="relative w-80 max-w-sm">
-                <img src={meTall} alt="Mikael Galliot" className="rounded-2xl object-cover w-full shadow-2xl" />
-                <div className="absolute -top-3 -left-3 w-20 h-20 bg-blue-500/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-purple-500/10 rounded-full blur-xl"></div>
-              </div>
+              <Polaroid src={meTall} alt="Mikael Galliot" caption="Mikael Galliot" size="sm" />
             </motion.div>
 
             {/* Text Section */}

@@ -3,10 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: 'class',
   theme: {
-    fontFamily: {
-      'sans': ["RobotoSlab-Regular", "RobotoSlab-Bold", "RobotoSlab-Light", "RobotoSlab-LightItalic", 'sans-serif', "Molot"],
-    },
     extend: {
+      fontFamily: {
+        'sans': ["RobotoSlab-Regular", "RobotoSlab-Bold", "RobotoSlab-Light", "RobotoSlab-LightItalic", 'sans-serif', "Molot"],
+        'permanent-marker': ['PermanentMarker', 'cursive'],
+
+      },
       minWidth: {
         '10vh': '10vh',
         '20vh': '20vh',

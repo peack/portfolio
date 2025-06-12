@@ -207,3 +207,11 @@ h6 {
 @media (max-width: 1023px) {
   /* Remove the padding-bottom as we handle spacing in App.tsx */
 }
+
+@font-face {
+  font-family: "PermanentMarker";
+  src: url("../assets/fonts/PermanentMarker-x99j.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
