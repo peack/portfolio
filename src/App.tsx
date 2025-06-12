@@ -7,6 +7,7 @@ import MyNavBar from "./components/Navigation/MyNavBar"
 import IntroductionWrapper from "./components/Introduction/IntroductionWrapper"
 import ContactWrapper from "./components/Contact/ContactWrapper"
 import SkillWrapper from "./components/Skills/SkillWrapper"
+import FloatingBackToHome from "./components/ui/FloatingBackToHome"
 import type { TNavItem } from "./types/TNavItem"
 import type { TExperience } from "./types/TExperience"
 import experienceData from "./data/experienceData.json"
@@ -27,6 +28,7 @@ function App() {
           <ExperienceWrapper experiences={experiences} id="experience" />
           <ContactWrapper id="contact" />
         </Home>
+        <FloatingBackToHome />
       </div>
     </ThemeProvider>
   )
