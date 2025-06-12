@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import type { TExperience } from "../../types/TExperience"
@@ -11,7 +12,18 @@ interface ExperienceCompactCardProps {
 
 const ExperienceCompactCard: React.FC<ExperienceCompactCardProps> = ({ experience, index, onViewDetails }) => {
   return (
-    <div data-theme="light">
+    <motion.div
+      data-theme="light"
+      initial={{ opacity: 0, x: -20, scale: 0.95 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      transition={{
+        duration: 0.4,
+        delay: index * 0.1,
+        ease: "easeOut",
+      }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+    >
       <Card
         onClick={() => onViewDetails(experience)}
         className="cursor-pointer hover:shadow-lg transition-all duration-200 group"
@@ -40,7 +52,7 @@ const ExperienceCompactCard: React.FC<ExperienceCompactCardProps> = ({ experienc
           <ChevronRight size={14} className="text-gray-400 group-hover:text-gray-600 transition-colors flex-shrink-0" />
         </CardContent>
       </Card>
-    </div>
+    </motion.div>
   )
 }
 

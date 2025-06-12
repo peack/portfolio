@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useMemo } from "react"
 import { motion } from "framer-motion"
 import { ArrowDown, ArrowUp, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -9,6 +9,7 @@ import ExperienceCard from "./ExperienceCard"
 import ExperienceModal from "./ExperienceModal"
 import ExperienceCarousel from "./ExperienceCarousel"
 import ExperienceCompactCard from "./ExperienceCompactCard"
+import TechFilter from "./TechFilter"
 
 interface ExperienceClassicProps {
   experiences: TExperience[]
@@ -19,12 +20,33 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
   const [selectedExperience, setSelectedExperience] = useState<TExperience | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
+  const [selectedTech, setSelectedTech] = useState<string | null>(null)
 
-  // Fixed pagination for mobile - always show 6 items per page
+  // Extract all unique technologies from experiences
+  const allTechnologies = useMemo(() => {
+    const techSet = new Set<string>()
+    experiences.forEach((exp) => {
+      exp.techStack?.forEach((tech) => techSet.add(tech))
+    })
+    return Array.from(techSet).sort()
+  }, [experiences])
+
+  // Filter experiences based on selected technology
+  const filteredExperiences = useMemo(() => {
+    if (!selectedTech) return experiences
+    return experiences.filter((exp) => exp.techStack?.some((tech) => tech.toLowerCase() === selectedTech.toLowerCase()))
+  }, [experiences, selectedTech])
+
+  // Fixed pagination for mobile - always show 4 items per page
   const itemsPerPage = 4
-  const totalPages = Math.ceil(experiences.length / itemsPerPage)
+  const totalPages = Math.ceil(filteredExperiences.length / itemsPerPage)
   const startIndex = currentPage * itemsPerPage
-  const currentExperiences = experiences.slice(startIndex, startIndex + itemsPerPage)
+  const currentExperiences = filteredExperiences.slice(startIndex, startIndex + itemsPerPage)
+
+  // Reset pagination when filter changes
+  React.useEffect(() => {
+    setCurrentPage(0)
+  }, [selectedTech])
 
   const handleViewDetails = (experience: TExperience) => {
     setSelectedExperience(experience)
@@ -34,6 +56,14 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
   const handleCloseModal = () => {
     setIsModalOpen(false)
     setSelectedExperience(null)
+  }
+
+  const handleTechFilter = (tech: string) => {
+    setSelectedTech(selectedTech === tech ? null : tech)
+  }
+
+  const clearFilter = () => {
+    setSelectedTech(null)
   }
 
   const nextPage = () => {
@@ -78,7 +108,7 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
         <div className="w-full relative z-10 flex-1 flex flex-col justify-center max-h-full pb-16 pt-16">
           {/* Header */}
           <motion.div
-            className="text-center mb-8 sm:mb-12 px-4"
+            className="text-center mb-6 sm:mb-8 px-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -90,16 +120,25 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
             <p className="text-lg sm:text-xl text-gray-600">A showcase of my professional journey</p>
           </motion.div>
 
+          {/* Tech Filter */}
+          <TechFilter
+            allTechnologies={allTechnologies}
+            selectedTech={selectedTech}
+            onTechFilter={handleTechFilter}
+            onClearFilter={clearFilter}
+            filteredCount={filteredExperiences.length}
+          />
+
           {/* Desktop Layout - 2-Row Carousel */}
           <div className="hidden lg:block flex-1 min-h-0">
-            <ExperienceCarousel experiences={experiences} onViewDetails={handleViewDetails} />
+            <ExperienceCarousel experiences={filteredExperiences} onViewDetails={handleViewDetails} />
           </div>
 
           {/* Mobile/Tablet Layout - Fixed Size Pages */}
           <div className="lg:hidden px-6 flex-1 flex flex-col justify-center">
             <div className="max-w-xl mx-auto w-full">
-              <div className="h-[50vh] flex flex-col">
-                <div className="flex-1 space-y-2 overflow-y-auto">
+              <div className="h-[52vh] flex flex-col">
+                <div className="flex-1 space-y-3 overflow-y-auto pb-2">
                   {currentExperiences.map((experience, index) => (
                     <ExperienceCompactCard
                       key={experience.id}
@@ -143,6 +182,16 @@ const ExperienceClassic: React.FC<ExperienceClassicProps> = ({ experiences, id }
                   >
                     <ChevronRight size={20} className="text-gray-700" />
                   </button>
+                </div>
+              )}
+
+              {/* No results message */}
+              {filteredExperiences.length === 0 && selectedTech && (
+                <div className="text-center py-8">
+                  <p className="text-gray-500">No projects found with {selectedTech}</p>
+                  <Button onClick={clearFilter} variant="outline" size="sm" className="mt-2">
+                    View All Projects
+                  </Button>
                 </div>
               )}
             </div>
