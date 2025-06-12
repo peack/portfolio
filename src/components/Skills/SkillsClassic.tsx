@@ -1,7 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { ArrowDown, ArrowUp } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import NavigationArrow from "../ui/NavigationArrow"
 import { scrollToSection } from "../../utils/navigation"
 import skillsData from "../../data/skillsData.json"
 import SkillCarousel from "./SkillCarousel"
@@ -63,37 +63,31 @@ const SkillsClassic: React.FC<SkillsClassicProps> = ({ id }) => {
 
       {/* Navigation indicators */}
       <motion.div
-        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.0 }}
         viewport={{ once: true }}
       >
-        <Button
+        <NavigationArrow
+          icon={ArrowDown}
           onClick={() => scrollToSection("experience")}
-          variant="ghost"
-          size="icon"
-          className="text-gray-400 hover:text-blue-400 transition-colors duration-300 w-12 h-12"
-        >
-          <ArrowDown size={28} className="sm:w-8 sm:h-8 animate-bounce" />
-        </Button>
+          className="text-gray-400 hover:text-blue-400"
+        />
       </motion.div>
 
       <motion.div
-        className="absolute top-6 sm:top-8 left-1/2 transform -translate-x-1/2"
+        className="absolute top-6 sm:top-8 left-1/2 transform -translate-x-1/2 z-50"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.2 }}
         viewport={{ once: true }}
       >
-        <Button
+        <NavigationArrow
+          icon={ArrowUp}
           onClick={() => scrollToSection("about")}
-          variant="ghost"
-          size="icon"
-          className="text-gray-400 hover:text-blue-400 transition-colors duration-300 w-12 h-12"
-        >
-          <ArrowUp size={28} className="sm:w-8 sm:h-8 animate-bounce" />
-        </Button>
+          className="text-gray-400 hover:text-blue-400"
+        />
       </motion.div>
     </section>
   )

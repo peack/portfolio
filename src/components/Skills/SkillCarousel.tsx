@@ -10,24 +10,20 @@ interface SkillCarouselProps {
 
 const SkillCarousel: React.FC<SkillCarouselProps> = ({ skills, direction = "left", duration = 30 }) => {
   return (
-    <div className="overflow-hidden">
-      <motion.div
-        className="flex gap-4 sm:gap-6 px-4 sm:px-6"
-        animate={{
-          x: direction === "left" ? [0, -2000] : [-2000, 0],
+    <div className="overflow-hidden relative">
+      <div
+        className="flex gap-4 animate-infinite-scroll"
+        style={{
+          width: `${skills.length * 120}px`,
+          animationDirection: direction === "right" ? "reverse" : "normal",
+          animationDuration: `${duration}s`,
         }}
-        transition={{
-          duration,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        style={{ width: "max-content" }}
       >
-        {/* Triple the array for seamless loop */}
-        {[...skills, ...skills, ...skills].map((skill, index) => (
-          <SkillCard key={`${direction}-${index}`} skill={skill} />
+        {/* Duplicate skills for seamless loop */}
+        {[...skills, ...skills].map((skill, index) => (
+          <SkillCard key={`${skill.name}-${index}`} skill={skill} />
         ))}
-      </motion.div>
+      </div>
     </div>
   )
 }
