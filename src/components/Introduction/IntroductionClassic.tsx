@@ -11,7 +11,7 @@ interface IntroductionClassicProps {
 
 const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
   return (
-    <section id={id} className="min-h-screen bg-gray-50 py-20 relative overflow-hidden">
+    <section id={id} className="min-h-screen bg-gray-50 py-20 relative overflow-hidden flex items-center">
       {/* Background grid pattern */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Main grid pattern */}
@@ -39,7 +39,7 @@ const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50/70 via-transparent to-purple-50/70"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 w-full">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <motion.div
@@ -55,7 +55,7 @@ const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
 
           {/* Desktop Layout */}
           <div className="hidden lg:block">
-            <div className="grid lg:grid-cols-3 gap-16 items-center">
+            <div className="grid lg:grid-cols-3 gap-16 items-center justify-center">
               {/* Image Section - 1/3 width */}
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
@@ -102,7 +102,7 @@ const IntroductionClassic: React.FC<IntroductionClassicProps> = ({ id }) => {
           </div>
 
           {/* Mobile Layout */}
-          <div className="lg:hidden space-y-12">
+          <div className="lg:hidden space-y-12 flex flex-col items-center">
             {/* Image Section */}
             <motion.div
               initial={{ y: 30, opacity: 0 }}

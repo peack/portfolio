@@ -14,28 +14,11 @@
   display: none;
 }
 @font-face {
-  font-family: "RobotoSlab-Bold";
-  src:
-    local("RobotoSlab-Bold"),
-    url("../fonts/Roboto/RobotoSlab-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Molot";
-  src:
-    local("Molot"),
-    url("../fonts/Molot.otf") format("truetype");
-}
-@font-face {
-  font-family: "RobotoSlab-Regular";
-  src: url("../fonts/Roboto/RobotoSlab-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "RobotoSlab-Light";
-  src: url("../fonts/Roboto/RobotoSlab-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "RobotoSlab-LightItalic";
-  src: url("../fonts/Roboto/RobotoSlab-LightItalic.ttf") format("truetype");
+  font-family: "PermanentMarker";
+  src: url("../assets/fonts/PermanentMarker-x99j.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -206,12 +189,4 @@ h6 {
 /* Remove conflicting body padding for mobile */
 @media (max-width: 1023px) {
   /* Remove the padding-bottom as we handle spacing in App.tsx */
-}
-
-@font-face {
-  font-family: "PermanentMarker";
-  src: url("../assets/fonts/PermanentMarker-x99j.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
