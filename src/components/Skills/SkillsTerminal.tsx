@@ -27,7 +27,11 @@ interface SkillsData {
 
 const overallSkills: SkillsData = SkillOverall
 
-export const SkillsTerminal: React.FC = () => {
+interface SkillsTerminalProps {
+  id: string
+}
+
+export const SkillsTerminal: React.FC<SkillsTerminalProps> = ({ id }) => {
   const skillsD: SkillsData = SkillsData
   const [activeCat, setActiveCat] = useState("Overall")
   const [topSkills, setTopSkills] = useState<Skill[]>(overallSkills.skills)
@@ -80,7 +84,7 @@ export const SkillsTerminal: React.FC = () => {
 
   return (
     <CRTBackground
-      id="skills"
+      id={id}
       showScrollIndicator={true}
       scrollTarget="experience"
       showBackIndicator={true}

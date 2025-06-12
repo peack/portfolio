@@ -1,0 +1,93 @@
+import React from "react"
+import { motion } from "framer-motion"
+import { ArrowDown, ArrowUp } from "lucide-react"
+import skillsData from "../../data/skillsData.json"
+import SkillCarousel from "./SkillCarousel"
+import SkillsSeparator from "./SkillsSeparator"
+
+interface SkillsClassicProps {
+  id: string
+}
+
+const SkillsClassic: React.FC<SkillsClassicProps> = ({ id }) => {
+  return (
+    <section id={id} className="min-h-dvh bg-gray-950 py-16 sm:py-20 relative overflow-hidden flex items-center">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="w-full relative z-10">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-12 sm:mb-16 px-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Skills & Technologies</h2>
+          <p className="text-lg sm:text-xl text-gray-300">Technologies I work with and love</p>
+        </motion.div>
+
+        {/* Top Separator */}
+        <div className="mb-6 sm:mb-8">
+          <SkillsSeparator color="blue" />
+        </div>
+
+        {/* Carousel Container with Side Shadows */}
+        <div className="relative">
+          {/* Left Shadow */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-gray-950 to-transparent z-10 pointer-events-none"></div>
+
+          {/* Right Shadow */}
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-gray-950 to-transparent z-10 pointer-events-none"></div>
+
+          {/* First Carousel - Left to Right */}
+          <div className="mb-6 sm:mb-8">
+            <SkillCarousel skills={skillsData.topRowSkills} direction="left" duration={30} />
+          </div>
+
+          {/* Second Carousel - Right to Left */}
+          <div>
+            <SkillCarousel skills={skillsData.bottomRowSkills} direction="right" duration={35} />
+          </div>
+        </div>
+
+        {/* Bottom Separator */}
+        <div className="mt-6 sm:mt-8">
+          <SkillsSeparator color="purple" />
+        </div>
+      </div>
+
+      {/* Navigation indicators */}
+      <motion.div
+        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.0 }}
+        viewport={{ once: true }}
+      >
+        <a href="#experience" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+          <ArrowDown size={28} className="sm:w-8 sm:h-8 animate-bounce" />
+        </a>
+      </motion.div>
+
+      <motion.div
+        className="absolute top-6 sm:top-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.2 }}
+        viewport={{ once: true }}
+      >
+        <a href="#about" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+          <ArrowUp size={28} className="sm:w-8 sm:h-8 animate-bounce" />
+        </a>
+      </motion.div>
+    </section>
+  )
+}
+
+export default SkillsClassic

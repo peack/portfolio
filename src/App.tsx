@@ -1,12 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useEffect, useState } from "react"
 import Home from "./components/Home"
-import ExperienceContainer from "./components/Experience/ExperienceContainer"
+import ExperienceWrapper from "./components/Experience/ExperienceWrapper"
 import MyNavBar from "./components/Navigation/MyNavBar"
 import HomePage from "./components/HomePage"
-import Introduction from "./components/Introduction/Introduction"
+import IntroductionWrapper from "./components/Introduction/IntroductionWrapper"
 import ContactContainer from "./components/Contact/ContactContainer"
-import SkillContainerGrid from "./components/Skills/SkillContainerGrid"
+import SkillWrapper from "./components/Skills/SkillWrapper"
 import type { TNavItem } from "./types/TNavItem"
 import type { TExperience } from "./types/TExperience"
 import experienceData from "./data/experienceData.json"
@@ -22,15 +22,14 @@ function App() {
     <ThemeProvider>
       <div className="App">
         <ThemeToggle />
-        <div className="min-h-screen">
-          <Home>
-            <HomePage id="home" />
-            <Introduction id="about" />
-            <SkillContainerGrid id="skills" />
-            <ExperienceContainer experiences={experiences} id="experience" />
-            <ContactContainer id="contact" />
-          </Home>
-        </div>
+        {/* <MyNavBar navItems={navItems} /> */}
+        <Home>
+          <HomePage id="home" />
+          <IntroductionWrapper id="about" />
+          <SkillWrapper id="skills" />
+          <ExperienceWrapper experiences={experiences} id="experience" />
+          <ContactContainer id="contact" />
+        </Home>
       </div>
     </ThemeProvider>
   )
