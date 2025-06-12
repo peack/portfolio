@@ -80,81 +80,81 @@ export const SkillsTerminal: React.FC = () => {
 
   return (
     <CRTBackground
-      className="min-h-screen py-12 sm:py-20 px-2 sm:px-4 md:px-8"
+      id="skills"
       showScrollIndicator={true}
       scrollTarget="experience"
+      showBackIndicator={true}
+      scrollBackTarget="about"
       scrollIndicatorDelay={2.0}
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Desktop Layout */}
-        <div className="hidden lg:block">
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Skills Terminal Window */}
-            <TerminalWindow
-              title="mikael@portfolio:~/skills"
-              icon={Code}
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              contentClassName="font-mono text-green-400 space-y-4"
-            >
-              <SkillProgressBar skills={topSkills} activeCat={activeCat} isDesktop={true} />
-            </TerminalWindow>
+      {/* Desktop Layout */}
+      <div className="hidden lg:block">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          {/* Skills Terminal Window */}
+          <TerminalWindow
+            title="mikael@portfolio:~/skills"
+            icon={Code}
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            contentClassName="font-mono text-green-400 space-y-4"
+          >
+            <SkillProgressBar skills={topSkills} activeCat={activeCat} isDesktop={true} />
+          </TerminalWindow>
 
-            {/* Category Filter Terminal Window */}
-            <TerminalWindow
-              title="skill-filter"
-              icon={Filter}
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              contentClassName="font-mono text-green-400 space-y-4"
-            >
-              <CategorySelector
-                categories={catArray}
-                activeCat={activeCat}
-                onCategoryClick={handleOnClick}
-                isDesktop={true}
-              />
-            </TerminalWindow>
-          </div>
-        </div>
-
-        {/* Mobile Layout */}
-        <div className="lg:hidden space-y-8">
+          {/* Category Filter Terminal Window */}
           <TerminalWindow
             title="skill-filter"
             icon={Filter}
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="shadow-xl"
             contentClassName="font-mono text-green-400 space-y-4"
           >
             <CategorySelector
               categories={catArray}
               activeCat={activeCat}
               onCategoryClick={handleOnClick}
-              isDesktop={false}
+              isDesktop={true}
             />
           </TerminalWindow>
-
-          <TerminalWindow
-            title="mikael@portfolio:~/skills"
-            icon={Code}
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="shadow-xl"
-            contentClassName="font-mono text-green-400 space-y-4"
-          >
-            <SkillProgressBar skills={topSkills} activeCat={activeCat} isDesktop={false} />
-          </TerminalWindow>
         </div>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="lg:hidden space-y-4">
+        <TerminalWindow
+          title="skill-filter"
+          icon={Filter}
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="shadow-xl"
+          contentClassName="font-mono text-green-400 space-y-3"
+        >
+          <CategorySelector
+            categories={catArray}
+            activeCat={activeCat}
+            onCategoryClick={handleOnClick}
+            isDesktop={false}
+          />
+        </TerminalWindow>
+
+        <TerminalWindow
+          title="mikael@portfolio:~/skills"
+          icon={Code}
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="shadow-xl"
+          contentClassName="font-mono text-green-400 space-y-3"
+        >
+          <SkillProgressBar skills={topSkills} activeCat={activeCat} isDesktop={false} />
+        </TerminalWindow>
       </div>
     </CRTBackground>
   )
