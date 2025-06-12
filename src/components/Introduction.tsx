@@ -9,7 +9,7 @@ import TerminalWindow from "./ui/terminal-window"
 const Introduction: React.FC = () => {
   return (
     <section id="about" className="relative">
-      <CRTBackground 
+      <CRTBackground
         className="min-h-screen py-12 sm:py-20 px-2 sm:px-4 md:px-8"
         showScrollIndicator={true}
         scrollTarget="skills"
@@ -64,12 +64,10 @@ const Introduction: React.FC = () => {
                     alt="Mikael Galliot"
                     className="rounded-lg object-cover border-2 border-green-500/30 w-full shadow-xl shadow-green-500/10"
                   />
-                  
+
                   {/* Image Overlay */}
-                  <motion.div
-                    className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  />
-                  
+                  <motion.div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                   {/* CRT Scanlines on Image */}
                   <div
                     className="absolute inset-0 rounded-lg opacity-20 pointer-events-none"
@@ -125,12 +123,10 @@ const Introduction: React.FC = () => {
                   alt="Mikael Galliot"
                   className="rounded-lg object-cover border-2 border-green-500/30 max-w-xs sm:max-w-sm w-full shadow-xl shadow-green-500/10"
                 />
-                
+
                 {/* Image Overlay */}
-                <motion.div
-                  className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
-                
+                <motion.div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                 {/* CRT Scanlines on Image */}
                 <div
                   className="absolute inset-0 rounded-lg opacity-20 pointer-events-none"

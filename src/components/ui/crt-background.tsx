@@ -23,13 +23,13 @@ const CRTBackground: React.FC<CRTBackgroundProps> = ({
   scrollTarget,
   scrollIndicatorDelay = 1.0,
   isHero = false,
-  id
+  id,
 }) => {
   const glowClasses = {
     light: "shadow-[inset_0_0_30px_rgba(0,255,0,0.03)]",
     medium: "shadow-[inset_0_0_50px_rgba(0,255,0,0.05)]",
     strong: "shadow-[inset_0_0_100px_rgba(0,255,0,0.1)]",
-    hero: "shadow-[inset_0_0_100px_rgba(0,255,0,0.1)]"
+    hero: "shadow-[inset_0_0_100px_rgba(0,255,0,0.1)]",
   }
 
   const scanlineOpacity = isHero ? "opacity-10" : "opacity-5"
@@ -43,14 +43,14 @@ const CRTBackground: React.FC<CRTBackgroundProps> = ({
   }
 
   const SectionTag = isHero ? "section" : "section"
-  const sectionProps = isHero 
-    ? { 
-        id, 
-        className: `relative h-dvh flex items-center justify-center overflow-hidden bg-black ${className}` 
+  const sectionProps = isHero
+    ? {
+        id,
+        className: `relative h-dvh flex items-center justify-center overflow-hidden bg-black ${className}`,
       }
-    : { 
-        id, 
-        className: `relative bg-black ${className}` 
+    : {
+        id,
+        className: `relative bg-black ${className}`,
       }
 
   return (
@@ -66,9 +66,11 @@ const CRTBackground: React.FC<CRTBackgroundProps> = ({
               : "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 0, 0.02) 2px, rgba(0, 255, 0, 0.02) 4px)",
           }}
         />
-        
+
         {/* CRT Curvature & Glow */}
-        <div className={`absolute inset-2 sm:inset-4 md:inset-8 bg-black rounded-lg ${glowClasses[glowIntensity]} border ${borderOpacity}`} />
+        <div
+          className={`absolute inset-2 sm:inset-4 md:inset-8 bg-black rounded-lg ${glowClasses[glowIntensity]} border ${borderOpacity}`}
+        />
 
         {/* Screen Flicker */}
         {showFlicker && (
@@ -81,9 +83,7 @@ const CRTBackground: React.FC<CRTBackgroundProps> = ({
       </div>
 
       {/* Content */}
-      <div className={isHero ? "relative z-10" : "relative z-10"}>
-        {children}
-      </div>
+      <div className={isHero ? "relative z-10" : "relative z-10"}>{children}</div>
 
       {/* Scroll Indicator */}
       {showScrollIndicator && (

@@ -38,7 +38,9 @@ const TerminalWindow: React.FC<TerminalWindowProps> = ({
       className={`bg-gray-900/90 backdrop-blur-sm rounded-lg border border-green-500/30 shadow-2xl ${className}`}
     >
       {/* Terminal Header */}
-      <div className={`flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/80 rounded-t-lg border-b border-green-500/20 ${headerClassName}`}>
+      <div
+        className={`flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/80 rounded-t-lg border-b border-green-500/20 ${headerClassName}`}
+      >
         <div className="flex space-x-2">
           <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
           <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
@@ -53,9 +55,7 @@ const TerminalWindow: React.FC<TerminalWindowProps> = ({
       </div>
 
       {/* Terminal Content */}
-      <div className={`p-4 sm:p-6 ${contentClassName}`}>
-        {children}
-      </div>
+      <div className={`p-4 sm:p-6 ${contentClassName}`}>{children}</div>
     </MotionDiv>
   )
 }
