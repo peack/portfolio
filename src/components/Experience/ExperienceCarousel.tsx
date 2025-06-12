@@ -16,13 +16,13 @@ const ExperienceCarousel: React.FC<ExperienceCarouselProps> = ({ experiences, on
   }
 
   return (
-    <div className="relative px-8 py-4 h-full flex items-center" data-theme="light">
+    <div className="relative px-8 py-4 h-full flex items-center">
       <Carousel
         opts={{
           align: "start",
           loop: true,
         }}
-        className="w-full mx-8"
+        className="w-full mx-8 "
       >
         <CarouselContent className="-ml-4">
           {experiencePairs.map((pair, pairIndex) => (

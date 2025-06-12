@@ -1,6 +1,9 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { ExternalLink, Eye } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 import type { TExperience } from "../../types/TExperience"
 
 interface ExperienceCardProps {
@@ -16,82 +19,88 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index, onVi
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full h-full flex flex-col"
+      className="w-full h-full"
     >
-      {/* Icons Row */}
-      {experience.references && experience.references.length > 0 && (
-        <div className="flex items-center gap-3 mb-4 flex-shrink-0">
-          {experience.references.slice(0, 3).map(
-            (reference, refIndex) =>
-              reference.iconLink && (
-                <div key={refIndex} className="w-12 h-12 rounded-lg overflow-hidden shadow-md flex-shrink-0">
-                  <img src={reference.iconLink} alt={`${reference.name} icon`} className="w-full h-full object-cover" />
-                </div>
-              )
-          )}
-        </div>
-      )}
+      <Card className="h-full shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <CardContent className="p-4 h-full flex flex-col">
+          {/* Title Row with Icons */}
+          <div className="flex items-start gap-3 mb-3 flex-shrink-0">
+            <div className="flex-1">
+              <h3 className="text-lg font-semibold text-gray-900 leading-tight line-clamp-2 mb-1">
+                {experience.title}
+              </h3>
+              <p className="text-sm text-gray-500">
+                {experience.date_start} - {experience.date_end || "Present"}
+              </p>
+            </div>
 
-      {/* Title and Date */}
-      <div className="mb-4 flex-shrink-0">
-        <h3 className="text-xl font-semibold text-gray-900 mb-2 leading-tight line-clamp-2">{experience.title}</h3>
-        <p className="text-sm text-gray-500">
-          {experience.date_start} - {experience.date_end || "Present"}
-        </p>
-      </div>
-
-      {/* Description Preview */}
-      {experience.description && (
-        <div className="mb-4 flex-1">
-          <p className="text-gray-700 text-sm leading-relaxed line-clamp-4">
-            {experience.description.length > 160
-              ? `${experience.description.substring(0, 160)}...`
-              : experience.description}
-          </p>
-        </div>
-      )}
-
-      {/* Tech Stack */}
-      {experience.techStack && experience.techStack.length > 0 && (
-        <div className="mb-4 flex-shrink-0">
-          <div className="flex flex-wrap gap-1">
-            {experience.techStack.slice(0, 4).map((tech, techIndex) => (
-              <span key={techIndex} className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">
-                {tech}
-              </span>
-            ))}
-            {experience.techStack.length > 4 && (
-              <span className="px-2 py-1 bg-gray-100 text-gray-500 rounded text-xs">
-                +{experience.techStack.length - 4} more
-              </span>
+            {/* Icons aligned to the right */}
+            {experience.references && experience.references.length > 0 && (
+              <div className="flex gap-2 flex-shrink-0">
+                {experience.references.slice(0, 2).map(
+                  (reference, refIndex) =>
+                    reference.iconLink && (
+                      <div key={refIndex} className="w-10 h-10 rounded-lg overflow-hidden shadow-md">
+                        <img
+                          src={reference.iconLink}
+                          alt={`${reference.name} icon`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )
+                )}
+              </div>
             )}
           </div>
-        </div>
-      )}
 
-      {/* Action Buttons */}
-      <div className="flex items-center justify-between mt-auto flex-shrink-0">
-        <button
-          onClick={() => onViewDetails(experience)}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm hover:bg-gray-200 transition-colors"
-        >
-          <Eye size={14} />
-          View Details
-        </button>
+          {/* Description Preview */}
+          {experience.description && (
+            <div className="mb-3 flex-1">
+              <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">
+                {experience.description.length > 120
+                  ? `${experience.description.substring(0, 120)}...`
+                  : experience.description}
+              </p>
+            </div>
+          )}
 
-        {/* Quick Reference Link */}
-        {experience.references && experience.references.length > 0 && experience.references[0].href && (
-          <a
-            href={experience.references[0].href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 px-3 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors"
-          >
-            <ExternalLink size={12} />
-            View App
-          </a>
-        )}
-      </div>
+          {/* Tech Stack */}
+          {experience.techStack && experience.techStack.length > 0 && (
+            <div className="mb-3 flex-shrink-0">
+              <div className="flex flex-wrap gap-1">
+                {experience.techStack.slice(0, 3).map((tech, techIndex) => (
+                  <Badge key={techIndex} variant="secondary" className="text-xs">
+                    {tech}
+                  </Badge>
+                ))}
+                {experience.techStack.length > 3 && (
+                  <Badge variant="outline" className="text-xs">
+                    +{experience.techStack.length - 3} more
+                  </Badge>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Action Buttons */}
+          <div className="flex items-center justify-between mt-auto flex-shrink-0 gap-2">
+            <Button onClick={() => onViewDetails(experience)} variant="outline" size="sm" className="flex-1">
+              <Eye className="mr-2 h-4 w-4" />
+              Details
+            </Button>
+
+            {/* Quick Reference Link */}
+            {experience.references && experience.references.length > 0 && experience.references[0].href && (
+              <Button asChild size="sm" className="flex-1">
+                <a href={experience.references[0].href} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  View
+                </a>
+              </Button>
+            )}
+          </div>
+        </CardContent>
+      </Card>
     </motion.div>
   )
 }

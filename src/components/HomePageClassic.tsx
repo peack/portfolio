@@ -20,7 +20,7 @@ const HomePageClassic: React.FC<HomePageClassicProps> = ({ id }) => {
   return (
     <section
       id={id}
-      className="h-dvh bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center relative"
+      className="dark h-dvh bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center relative"
     >
       <div className="container mx-auto px-4 text-center">
         <motion.div
