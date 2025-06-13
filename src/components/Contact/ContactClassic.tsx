@@ -1,15 +1,13 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Twitter, ArrowUp } from "lucide-react"
+import { Mail, MapPin, Github, Linkedin, ExternalLink, Twitter, ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import GradientBackground from "../ui/GradientBackground"
 import socialData from "../../data/socialData.json"
 import NavigationArrow from "../ui/NavigationArrow"
 import { scrollToSection } from "../../utils/navigation"
+import ContactForm from "./ContactForm"
 
 interface ContactClassicProps {
   id: string
@@ -91,28 +89,23 @@ export const ContactClassic: React.FC<ContactClassicProps> = ({ id }) => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div key={item.label}>
-                    <Card className="bg-gray-900 border-gray-700 hover:border-gray-600 transition-all">
-                      <CardContent className="flex items-center gap-4 p-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                          <item.icon className="w-6 h-6 text-blue-400" />
-                        </div>
-                        <div className="flex-1">
-                          <p className="text-sm text-gray-400 font-medium">{item.label}</p>
-                          {item.href ? (
-                            <a
-                              href={item.href}
-                              className="text-white hover:text-blue-400 transition-colors font-medium"
-                            >
-                              {item.value}
-                            </a>
-                          ) : (
-                            <p className="text-white font-medium">{item.value}</p>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
+                  <Card className="bg-gray-900 border-gray-700 hover:border-gray-600 transition-all">
+                    <CardContent className="flex items-center gap-4 p-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                        <item.icon className="w-6 h-6 text-blue-400" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm text-gray-400 font-medium">{item.label}</p>
+                        {item.href ? (
+                          <a href={item.href} className="text-white hover:text-blue-400 transition-colors font-medium">
+                            {item.value}
+                          </a>
+                        ) : (
+                          <p className="text-white font-medium">{item.value}</p>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               ))}
 
@@ -151,78 +144,12 @@ export const ContactClassic: React.FC<ContactClassicProps> = ({ id }) => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div>
-                <Card className="bg-gray-900 border-gray-700">
-                  <CardContent className="p-4 lg:p-6">
-                    <h3 className="text-xl font-semibold text-white mb-4">Send a Message</h3>
-
-                    <form
-                      action={`mailto:mikael.galliot@proton.me`}
-                      method="post"
-                      encType="text/plain"
-                      className="space-y-3"
-                    >
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="name" className="text-gray-300">
-                            Name
-                          </Label>
-                          <Input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your name"
-                            className="bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email" className="text-gray-300">
-                            Email
-                          </Label>
-                          <Input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="your@email.com"
-                            className="bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="subject" className="text-gray-300">
-                          Subject
-                        </Label>
-                        <Input
-                          type="text"
-                          id="subject"
-                          name="subject"
-                          placeholder="Project inquiry"
-                          className="bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="message" className="text-gray-300">
-                          Message
-                        </Label>
-                        <Textarea
-                          id="message"
-                          name="message"
-                          rows={5}
-                          placeholder="Tell me about your project..."
-                          className="bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 resize-none"
-                        />
-                      </div>
-
-                      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
-                        Send Message
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
-              </div>
+              <Card className="bg-gray-900 border-gray-700">
+                <CardContent className="p-4 lg:p-6">
+                  <h3 className="text-xl font-semibold text-white mb-4">Send a Message</h3>
+                  <ContactForm isDesktop={true} variant="classic" />
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
         </div>
